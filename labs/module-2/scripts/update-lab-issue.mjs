@@ -6,6 +6,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const labRoot = resolve(__dirname, '..')
 const config = JSON.parse(readFileSync(resolve(labRoot, 'lab.config.json'), 'utf8'))
 
+function normalizeTestName(testName = '') {
+  return testName.replace(/\\/g, '/').split('/').pop()
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
 function renderCurrentStep(step) {
   if (!step) {
     return `LAB-CURRENT-STEP-START
@@ -59,12 +67,12 @@ function getCompletedStepsFromResults(results) {
   const fileResults = new Map()
 
   for (const testResult of results?.testResults ?? []) {
-    fileResults.set(testResult.name.split('/').pop(), testResult.status === 'passed')
+    fileResults.set(normalizeTestName(testResult.name), testResult.status === 'passed')
   }
 
   const completed = []
   for (const step of config.steps) {
-    const filesPass = step.testFiles.every((file) => fileResults.get(file) === true)
+    const filesPass = step.testFiles.every((file) => fileResults.get(normalizeTestName(file)) === true)
     if (filesPass) {
       completed.push(step.id)
     }
@@ -77,13 +85,25 @@ function getNextStep(completedStepIds) {
   return config.steps.find((step) => !completedStepIds.includes(step.id))
 }
 
-function upsertBlock(body, markerStart, markerEnd, replacement) {
-  const pattern = new RegExp(`${markerStart}[\\s\\S]*?${markerEnd}`)
-  if (pattern.test(body)) {
-    return body.replace(pattern, replacement)
+function upsertBlock(body, markerVariants, replacement) {
+  for (const [markerStart, markerEnd] of markerVariants) {
+    const pattern = new RegExp(`${escapeRegExp(markerStart)}[\\s\\S]*?${escapeRegExp(markerEnd)}`)
+    if (pattern.test(body)) {
+      return body.replace(pattern, replacement)
+    }
   }
   return `${body.trim()}\n\n${replacement}`
 }
+
+const CURRENT_STEP_MARKERS = [
+  ['LAB-CURRENT-STEP-START', 'LAB-CURRENT-STEP-END'],
+  ['<!-- LAB-CURRENT-STEP:START -->', '<!-- LAB-CURRENT-STEP:END -->'],
+]
+
+const CHECKLIST_MARKERS = [
+  ['LAB-CHECKLIST-START', 'LAB-CHECKLIST-END'],
+  ['<!-- LAB-CHECKLIST:START -->', '<!-- LAB-CHECKLIST:END -->'],
+]
 
 async function githubRequest(path, token, options = {}) {
   const response = await fetch(`https://api.github.com${path}`, {
@@ -200,8 +220,8 @@ async function main() {
   const checklistBlock = renderChecklist(completedStepIds)
 
   let body = issue.body ?? ''
-  body = upsertBlock(body, 'LAB-CURRENT-STEP-START', 'LAB-CURRENT-STEP-END', currentBlock)
-  body = upsertBlock(body, 'LAB-CHECKLIST-START', 'LAB-CHECKLIST-END', checklistBlock)
+  body = upsertBlock(body, CURRENT_STEP_MARKERS, currentBlock)
+  body = upsertBlock(body, CHECKLIST_MARKERS, checklistBlock)
 
   await githubRequest(`/repos/${repo}/issues/${issue.number}`, token, {
     method: 'PATCH',
@@ -213,7 +233,8 @@ async function main() {
   const stepPassed = branchStep
     ? branchStep.testFiles.every((file) =>
         results.testResults?.some(
-          (result) => result.name.split('/').pop() === file && result.status === 'passed',
+          (result) =>
+            normalizeTestName(result.name) === normalizeTestName(file) && result.status === 'passed',
         ),
       )
     : false
