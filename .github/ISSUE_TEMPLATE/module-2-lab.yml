@@ -10,7 +10,7 @@ body:
 
       Welcome! **Follow only this issue** — it updates automatically after each successful push.
 
-      1. Clone the repo and run `cd labs/module-2 && npm install`
+      1. Clone **your fork** and run `cd labs/module-2 && npm install`
       2. Complete the **Current step** below
       3. Push your branch — GitHub Actions validates tests and unlocks the next step here
 

@@ -68,13 +68,13 @@
     "labLinks": "Lab Links",
     "labWorkflow": {
       "title": "Hands-on Lab (Express + Tests)",
-      "subtitle": "Participants clone the repo, click Start exercise, then follow their GitHub Issue step by step.",
-      "stepClone": "Clone the repository and run npm install in labs/module-2",
-      "stepReadme": "Open labs/module-2/README.md for context and prerequisites",
-      "stepIssue": "Click Start exercise to create a personal GitHub Issue",
-      "stepFollow": "Follow only the Current step in your issue — it updates after each push",
-      "startExercise": "Start exercise",
-      "openReadme": "Open lab README",
+      "subtitle": "Students fork the repo, open the lab README on their fork, click Start exercise, then follow their issue.",
+      "stepFork": "Fork the repository (all branches, not main only)",
+      "stepReadme": "On your fork, open labs/module-2/README.md",
+      "stepIssue": "Click Start exercise → create your issue",
+      "stepFollow": "Follow only your issue — it updates after each push",
+      "forkRepo": "Fork on GitHub",
+      "openReadme": "View lab README",
       "stepsReference": "Lab branches reference (trainer view)"
     }
   },

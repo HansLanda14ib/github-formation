@@ -44,24 +44,24 @@ export function ExerciseModePage() {
                 {t('exercise.labWorkflow.subtitle')}
               </Typography>
               <Stack component="ol" spacing={0.8} sx={{ m: 0, pl: 3, mb: 2 }}>
-                <Typography component="li">{t('exercise.labWorkflow.stepClone')}</Typography>
+                <Typography component="li">{t('exercise.labWorkflow.stepFork')}</Typography>
                 <Typography component="li">{t('exercise.labWorkflow.stepReadme')}</Typography>
                 <Typography component="li">{t('exercise.labWorkflow.stepIssue')}</Typography>
                 <Typography component="li">{t('exercise.labWorkflow.stepFollow')}</Typography>
               </Stack>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.2}>
                 <Button
-                  href={lab.issueTemplateUrl}
+                  href="https://github.com/HansLanda14ib/github-formation/fork"
                   target="_blank"
                   rel="noreferrer"
                   variant="contained"
                   startIcon={<GitHubIcon />}
                   endIcon={<OpenInNewIcon />}
                 >
-                  {t('exercise.labWorkflow.startExercise')}
+                  {t('exercise.labWorkflow.forkRepo')}
                 </Button>
                 <Button
-                  href={`https://github.com/HansLanda14ib/github-formation/blob/main/${lab.readmePath}`}
+                  href="https://github.com/HansLanda14ib/github-formation/blob/main/labs/module-2/README.md"
                   target="_blank"
                   rel="noreferrer"
                   variant="outlined"

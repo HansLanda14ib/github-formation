@@ -101,7 +101,7 @@
     "lab": {
       "repoPath": "labs/module-2",
       "readmePath": "labs/module-2/README.md",
-      "issueTemplateUrl": "https://github.com/HansLanda14ib/github-formation/issues/new?template=module-2-lab.yml&labels=module-2-lab",
+      "issueTemplateUrl": "issues/new?template=module-2-lab.yml",
       "steps": [
         {
           "branch": "feature/module-2/00-intro",
