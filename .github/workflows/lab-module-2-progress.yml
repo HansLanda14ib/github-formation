@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - 'feature/module-2/**'
-    paths:
-      - 'labs/module-2/**'
-      - '.github/workflows/lab-module-2-progress.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

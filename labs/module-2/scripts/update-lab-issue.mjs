@@ -104,10 +104,39 @@ async function githubRequest(path, token, options = {}) {
   return response.json()
 }
 
+async function ensureLabLabel(token, repo) {
+  try {
+    await githubRequest(`/repos/${repo}/labels/${encodeURIComponent(config.label)}`, token)
+  } catch {
+    await githubRequest(`/repos/${repo}/labels`, token, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: config.label,
+        color: '1D76DB',
+        description: 'Module 2 hands-on lab tracker',
+      }),
+    })
+  }
+}
+
 async function findLearnerIssue(token, repo, actor) {
-  const query = encodeURIComponent(`repo:${repo} is:issue is:open label:${config.label} author:${actor}`)
-  const data = await githubRequest(`/search/issues?q=${query}&sort=created&order=desc&per_page=1`, token)
-  return data.items?.[0] ?? null
+  const queries = [
+    `repo:${repo} is:issue is:open label:${config.label} author:${actor}`,
+    `repo:${repo} is:issue is:open author:${actor} "[Lab M2]" in:title`,
+  ]
+
+  for (const query of queries) {
+    const data = await githubRequest(
+      `/search/issues?q=${encodeURIComponent(query)}&sort=created&order=desc&per_page=1`,
+      token,
+    )
+    if (data.items?.[0]) {
+      return data.items[0]
+    }
+  }
+
+  return null
 }
 
 function buildComment(completedStepIds, nextStep, branch, success) {
@@ -140,10 +169,20 @@ async function main() {
     throw new Error('Missing GITHUB_TOKEN, GITHUB_REPOSITORY, or GITHUB_ACTOR')
   }
 
+  await ensureLabLabel(token, repo)
+
   const issue = await findLearnerIssue(token, repo, actor)
   if (!issue) {
-    console.log(`No open issue found for ${actor} with label ${config.label}`)
+    console.log(`No open issue found for ${actor} (label ${config.label} or title [Lab M2])`)
     return
+  }
+
+  if (!issue.labels?.some((label) => label.name === config.label)) {
+    await githubRequest(`/repos/${repo}/issues/${issue.number}/labels`, token, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ labels: [config.label] }),
+    })
   }
 
   let results = { testResults: [] }
