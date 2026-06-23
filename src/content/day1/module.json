@@ -1,0 +1,237 @@
+{
+  "id": "module-1",
+  "day": 1,
+  "title": "Responsible AI with GitHub Copilot",
+  "duration": 45,
+  "objectives": [
+    "Understand Microsoft's six principles of Responsible AI",
+    "Recognize AI risks and mitigation strategies",
+    "Apply responsible AI practices to code generation"
+  ],
+  "sections": [
+    {
+      "id": "m1-tell",
+      "title": "Responsible AI Principles",
+      "kind": "tell",
+      "body": "Responsible AI is the practice of developing, evaluating, and deploying AI systems in a safe, ethical, and trustworthy manner. Since AI systems reflect the decisions of their creators and users, Responsible AI promotes outcomes that are fair, reliable, transparent, and human-centered, ensuring technology aligns with people's needs and values.\n\nAI offers significant benefits but also introduces risks such as lack of transparency, biased outcomes, and privacy concerns. Organizations should establish strong governance frameworks, ensure transparency, and maintain human oversight.\n\nMicrosoft and GitHub identify six key principles that should guide AI development and usage.",
+      "bullets": [
+        "AI reflects creators' and users' decisions",
+        "Responsible AI promotes fairness, reliability, transparency",
+        "Governance, transparency, and oversight are essential"
+      ]
+    },
+    {
+      "id": "m1-show",
+      "title": "Six Principles of Responsible AI",
+      "kind": "show",
+      "body": "Microsoft's six principles provide a comprehensive framework for responsible AI development:\n\n**1. Fairness**\nAI systems should treat all people fairly and avoid biased or discriminatory outcomes. This requires reviewing training data, testing with balanced samples, and using adversarial debiasing techniques to identify and mitigate bias across demographic groups.\n\n**2. Reliability and Safety**\nAI systems should perform reliably and safely under various conditions. Reliability means consistent, predictable performance. Safety means the system won't cause harm or unexpected failures, especially in critical applications.\n\n**3. Privacy and Security**\nAI systems must be secure and respect user privacy. This includes protecting personal data, using encryption, implementing access controls, and complying with privacy regulations like GDPR.\n\n**4. Inclusiveness**\nAI systems should empower everyone and be accessible to people with diverse abilities and backgrounds. This means considering accessibility, language support, and cultural sensitivity in design.\n\n**5. Transparency**\nAI systems should be understandable. Users and developers should understand how the system works, what data it uses, and how decisions are made. This builds trust and accountability.\n\n**6. Accountability**\nPeople should be accountable for AI systems. Clear ownership, documentation, and responsibility chains ensure that if something goes wrong, there's a clear path to address it.\n\n![alt text](image.png)",
+      "bullets": [
+        "Fairness: equal treatment across groups",
+        "Reliability & Safety: consistent, safe performance",
+        "Privacy & Security: protect user data",
+        "Inclusiveness: accessible to all",
+        "Transparency: understandable operations",
+        "Accountability: clear responsibility"
+      ]
+    },
+    {
+      "id": "m1-demo",
+      "title": "Mitigating AI Risks in Practice",
+      "kind": "demo",
+      "body": "When using GitHub Copilot, developers must closely scrutinize AI-generated code to:\n- Ensure alignment with project-specific conventions and requirements\n- Verify security and privacy implications\n- Check for biased or unfair logic\n- Validate functional correctness\n- Ensure no sensitive data is included\n\nExample: If Copilot generates code with hardcoded credentials or personally identifiable information, reject it and provide context that excludes such data.",
+      "bullets": [
+        "Always review AI-generated code",
+        "Check for security issues and bias",
+        "Validate functional correctness",
+        "Ensure no sensitive data inclusion"
+      ]
+    },
+    {
+      "id": "m1-discuss",
+      "title": "Governance and Human Oversight",
+      "kind": "discuss",
+      "body": "Organizations implementing AI should:\n- Establish clear governance frameworks defining acceptable use\n- Maintain human oversight at critical decision points\n- Monitor for unintended consequences\n- Provide training on responsible AI practices\n- Document decisions and maintain audit trails\n- Collect feedback and continuously improve",
+      "bullets": [
+        "Governance frameworks define acceptable use",
+        "Human oversight at critical points",
+        "Monitor and audit AI decisions",
+        "Continuous improvement through feedback"
+      ]
+    },
+    {
+      "id": "m1-practice",
+      "title": "Responsible AI Practice: Fair Student Support Priorities",
+      "kind": "practice",
+      "body": "### Real-World Use Case\nBusiness Context:\nA school uses a simple app to prioritize student support requests (counseling, admin help, technical help). Staff noticed that similar requests were sometimes given different priority levels, causing confusion and trust issues.\n\nDeveloper Task:\nBuild and review a Copilot-assisted priority helper for support tickets, making sure it follows fairness, transparency, privacy, and accountability rules.\n\nExample Input:\n```json\n{\n  \"ticketId\": \"SUP-104\",\n  \"category\": \"counseling\",\n  \"urgency\": \"medium\",\n  \"submittedAt\": \"2026-06-21T09:30:00Z\",\n  \"studentId\": \"STD-2001\"\n}\n```\n\nExpected Output:\n```json\n{\n  \"ticketId\": \"SUP-104\",\n  \"priority\": \"MEDIUM\",\n  \"reasonCodes\": [\"category\", \"urgency\", \"submission_time\"],\n  \"requiresHumanReview\": true\n}\n```\n\nWhy This Matters:\nFair and clear prioritization helps students get equal treatment and reduces complaints.\n\nGitHub Copilot Challenge:\nAsk Copilot to generate a Node.js/Express helper that calculates support priority, then improve it with explainable reason codes, safe logging, and fairness test cases.",
+      "bullets": [
+        "Review generated code systematically",
+        "Test across diverse contexts",
+        "Document and discuss ethical implications",
+        "Create organizational guidelines"
+      ]
+    }
+  ],
+  "exercise": {
+    "title": "Responsible AI review for school support prioritization",
+    "steps": [
+      "Generate a support priority helper using Copilot.",
+      "Add fairness and transparency checks.",
+      "Remove sensitive data from logs.",
+      "Write tests for equivalent-priority scenarios.",
+      "Document governance decisions in README."
+    ],
+    "expectedOutcomes": [
+      "A fair and explainable prioritization helper.",
+      "Clear validation and audit-ready logic.",
+      "Confidence applying Responsible AI in daily development."
+    ],
+    "troubleshooting": [
+      "If outputs seem biased, remove non-essential personal attributes.",
+      "If logs contain private data, add a redaction utility.",
+      "If priority is unclear, require explicit reason codes."
+    ],
+    "links": [
+      {
+        "label": "Microsoft Responsible AI",
+        "href": "https://www.microsoft.com/en-us/ai/responsible-ai"
+      },
+      {
+        "label": "GitHub Copilot Best Practices",
+        "href": "https://docs.github.com/en/copilot/using-github-copilot"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "m1-q1",
+      "question": "What is the primary goal of Responsible AI?",
+      "options": [
+        "To maximize profits from AI systems.",
+        "To develop AI systems as quickly as possible.",
+        "To ensure AI systems are safe, trustworthy, and ethical.",
+        "To replace human decision-making with AI."
+      ],
+      "answerIndex": 2,
+      "discussionPrompt": "How do you ensure AI systems align with human values in your projects?"
+    },
+    {
+      "id": "m1-q2",
+      "question": "Which principle is NOT one of the six identified by Microsoft?",
+      "options": [
+        "Fairness.",
+        "Innovation.",
+        "Inclusiveness.",
+        "Accountability."
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "What would the principle of Innovation entail if it were part of Responsible AI?"
+    },
+    {
+      "id": "m1-q3",
+      "question": "What does Fairness in Responsible AI emphasize?",
+      "options": [
+        "Maximizing AI performance at all costs.",
+        "Ensuring AI systems perform equally well across all demographic groups.",
+        "Prioritizing profitability over ethical concerns.",
+        "Creating AI systems that are easy to understand."
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How can developers test for fairness in AI-generated code?"
+    },
+    {
+      "id": "m1-q4",
+      "question": "How does Microsoft address potential biases in AI systems?",
+      "options": [
+        "By ignoring the issue and focusing on other areas.",
+        "By providing AI systems with more data.",
+        "By reviewing training data, testing with balanced samples, and using adversarial debiasing.",
+        "By allowing users to modify AI system outputs directly."
+      ],
+      "answerIndex": 2,
+      "discussionPrompt": "What additional bias mitigation strategies would you recommend?"
+    },
+    {
+      "id": "m1-q5",
+      "question": "What is the role of transparency?",
+      "options": [
+        "To keep AI operations secret from the public.",
+        "To make AI systems' operations and decisions understandable and clear.",
+        "To hide the limitations of AI systems.",
+        "To prioritize efficiency over ethical considerations."
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How do you communicate AI system transparency to non-technical stakeholders?"
+    },
+    {
+      "id": "m1-q6",
+      "question": "Why scrutinize AI-generated code?",
+      "options": [
+        "To reduce development time.",
+        "To ensure alignment with project conventions and requirements.",
+        "To enhance the creative aspect of coding.",
+        "To automatically improve system performance."
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "What review checklist would you create for AI-generated code?"
+    }
+  ],
+  "agenda": [
+    {
+      "label": "Tell",
+      "minutes": 10,
+      "focus": "Responsible AI foundations and risk mitigation"
+    },
+    {
+      "label": "Show",
+      "minutes": 10,
+      "focus": "Microsoft and GitHub six principles"
+    },
+    {
+      "label": "Demo",
+      "minutes": 8,
+      "focus": "Reviewing AI-generated code responsibly"
+    },
+    {
+      "label": "Discuss",
+      "minutes": 7,
+      "focus": "Governance, oversight, and accountability"
+    },
+    {
+      "label": "Practice",
+      "minutes": 10,
+      "focus": "Apply principles to code review scenarios"
+    }
+  ],
+  "units": [
+    {
+      "title": "Introduction",
+      "uid": "learn.github.responsible-ai.introduction"
+    },
+    {
+      "title": "Mitigate AI risks",
+      "uid": "learn.github.responsible-ai.mitigate-risks"
+    },
+    {
+      "title": "Microsoft and GitHub's six principles of Responsible AI",
+      "uid": "learn.github.responsible-ai.six-principles"
+    },
+    {
+      "title": "Module assessment",
+      "uid": "learn.github.responsible-ai.knowledge-check"
+    }
+  ],
+  "officialAlignment": [
+    "Mapped from docs/gh300-part-1.md module 1 sections and assessment.",
+    "Uses full six-principles coverage: Fairness, Reliability and safety, Privacy and security, Inclusiveness, Transparency, Accountability."
+  ],
+  "officialDocs": [
+    {
+      "title": "Microsoft Responsible AI",
+      "href": "https://www.microsoft.com/en-us/ai/responsible-ai"
+    },
+    {
+      "title": "GitHub Copilot Docs",
+      "href": "https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot"
+    }
+  ]
+}

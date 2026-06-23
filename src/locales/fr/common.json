@@ -1,0 +1,81 @@
+{
+  "navigation": {
+    "dashboard": "Tableau de bord",
+    "journey": "Parcours"
+  },
+  "dashboard": {
+    "title": "Plateforme Compagnon Formateur",
+    "subtitle": "Cours théorique officiel GH-300 Partie 1",
+    "currentModule": "Module actuel",
+    "officialGuidance": "Guide officiel GitHub Copilot (Analyse du cours)",
+    "buttons": {
+      "whatIsCopilot": "Qu'est-ce que Copilot ?",
+      "copilotFeatures": "Fonctionnalités de Copilot",
+      "promptEngineering": "Ingénierie des invites",
+      "microsoftResponsibleAI": "IA responsable Microsoft",
+      "githubCopilotBestPractices": "Meilleures pratiques GitHub Copilot"
+    },
+    "quickActions": {
+      "openModuleTheory": "Ouvrir la théorie du module",
+      "openModuleTheoryBody": "Livrer le module officiel GH-300 Partie 1 selon la séquence unité par unité.",
+      "openJourney": "Ouvrir le parcours",
+      "openJourneyBody": "Naviguer tous les modules officiel GH-300 Partie 1 dans l'ordre.",
+      "launchQuiz": "Lancer le quiz",
+      "launchQuizBody": "Faciliter le quiz basé sur la discussion avec révélation de réponses contrôlée.",
+      "trainerFocus": "Focus formateur",
+      "trainerFocusBody": "Afficher les notes du formateur, conseils de timing et points de discussion de secours.",
+      "open": "Ouvrir"
+    },
+    "moduleInfo": "unités officielles"
+  },
+  "journey": {
+    "title": "Parcours des modules GH-300",
+    "subtitle": "Séquence de module officiel GitHub Copilot Fundamentals Partie 1",
+    "module": "Module",
+    "officialUnits": "unités officielles",
+    "openSession": "Ouvrir la session"
+  },
+  "session": {
+    "title": "Session",
+    "subtitle": "Flux officiel du module GH-300 Partie 1 avec étapes unitaires",
+    "objectives": "Objectifs",
+    "unitSteps": "Étapes unitaires (Séquence officielle)",
+    "theoreticalDeliveryAgenda": "Agenda de livraison théorique",
+    "officialGuidanceAlignment": "Alignement du guide officiel",
+    "minutes": "minutes"
+  },
+  "demo": {
+    "title": "Mode démo",
+    "subtitle": "Typographie large et flux sans distraction pour le partage d'écran",
+    "trainerNotesVisible": "Notes du formateur visibles",
+    "trainerNotesHidden": "Notes du formateur masquées"
+  },
+  "exercise": {
+    "title": "Mode exercice",
+    "subtitle": "Pratique guidée avec résultats attendus et dépannage",
+    "expectedOutcomes": "Résultats attendus",
+    "troubleshootingTips": "Conseils de dépannage",
+    "labLinks": "Liens de laboratoire"
+  },
+  "quiz": {
+    "title": "Mode quiz",
+    "subtitle": "Contrôles basés sur la discussion avec révélation de réponses manuelle",
+    "facilitatorControls": "Contrôles du facilitateur",
+    "revealed": "révélées",
+    "resetReveals": "Réinitialiser les révélations",
+    "revealAnswer": "Révéler la réponse",
+    "answerRevealed": "Réponse révélée",
+    "discuss": "Discuter"
+  },
+  "notFound": {
+    "title": "Page non trouvée",
+    "subtitle": "L'itinéraire demandé n'est pas disponible dans cette version de formateur.",
+    "returnToDashboard": "Retour au tableau de bord"
+  },
+  "errors": {
+    "moduleNotFound": "Le jour demandé n'existe pas."
+  },
+  "common": {
+    "moduleDay": "Module {{day}} : {{title}}"
+  }
+}

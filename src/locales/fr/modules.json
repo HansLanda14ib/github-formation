@@ -1,0 +1,230 @@
+{
+  "modules": {
+    "day1": {
+      "title": "IA responsable avec GitHub Copilot",
+      "duration": 45,
+      "objectives": [
+        "Comprendre les six principes de l'IA responsable de Microsoft",
+        "Reconnaître les risques de l'IA et les stratégies d'atténuation",
+        "Appliquer des pratiques d'IA responsable à la génération de code"
+      ],
+      "section_titles": [
+        "Principes de l'IA responsable",
+        "Six principes de l'IA responsable",
+        "Atténuation des risques de l'IA en pratique",
+        "Gouvernance et surveillance humaine",
+        "Pratique de l'IA responsable : Priorités d'aide aux étudiants"
+      ],
+      "exercise": {
+        "title": "Examen de l'IA responsable pour la priorisation du soutien scolaire",
+        "steps": [
+          "Générez un assistant de priorisation d'aide avec Copilot.",
+          "Ajoutez des contrôles d'équité et de transparence.",
+          "Supprimez les données sensibles des journaux.",
+          "Écrivez des tests pour les scénarios de priorité équivalente.",
+          "Documentez les décisions de gouvernance dans le fichier README."
+        ]
+      },
+      "expected_outcomes": [
+        "Un assistant de priorisation équitable et explicable.",
+        "Logique de validation claire et prête pour l'audit.",
+        "Confiance dans l'application de l'IA responsable dans le développement quotidien."
+      ]
+    },
+    "day2": {
+      "title": "Introduction à GitHub Copilot",
+      "duration": 45,
+      "objectives": [
+        "Décrire les capacités et fonctionnalités de GitHub Copilot",
+        "Maîtriser tous les modes d'interaction",
+        "Configurer Copilot dans votre IDE"
+      ],
+      "section_titles": [
+        "GitHub Copilot — Votre programmeur en pair IA",
+        "Fonctionnalités de GitHub Copilot",
+        "Modes d'interaction — Toutes les méthodes",
+        "Configuration et paramétrage",
+        "Pratique avec Copilot : Intégration des étudiants et des classes"
+      ],
+      "exercise": {
+        "title": "Implémenter les API d'intégration des étudiants et des classes avec Copilot",
+        "steps": [
+          "Échafaudez les schémas Student et Class avec les suggestions en ligne.",
+          "Générez les gestionnaires POST /students et POST /classes en utilisant le chat en ligne.",
+          "Ajoutez la gestion des doublons et les erreurs structurées avec Copilot Chat.",
+          "Générez des tests pour les succès, les charges utiles invalides et les doublons.",
+          "Affinez la lisibilité du code et la documentation avant la révision finale."
+        ]
+      },
+      "expected_outcomes": [
+        "Points de terminaison d'intégration fonctionnels pour les étudiants et les classes.",
+        "Gestion fiable de la validation et des conflits.",
+        "Meilleure utilisation des modes d'interaction de Copilot."
+      ]
+    },
+    "day3": {
+      "title": "Introduction à l'ingénierie des invites avec GitHub Copilot",
+      "duration": 45,
+      "objectives": [
+        "Maîtriser la méthode 4S pour les invites efficaces",
+        "Comprendre les stratégies d'apprentissage et le flux de processus",
+        "Appliquer les meilleures pratiques pour des suggestions de qualité"
+      ],
+      "section_titles": [
+        "Fondations de l'ingénierie des invites",
+        "Meilleures pratiques et stratégies d'apprentissage",
+        "Incitation par rôle et flux de processus",
+        "Gestion des données et limites de contexte",
+        "Pratique de l'ingénierie des invites : API de demande d'inventaire"
+      ],
+      "exercise": {
+        "title": "Améliorer la génération de point de terminaison d'inventaire avec des invites 4S",
+        "steps": [
+          "Générez un point de terminaison avec une invite faible et notez les lacunes.",
+          "Réécrivez l'invite avec 4S et des règles de validation explicites.",
+          "Utilisez des exemples one-shot/few-shot pour aligner le style.",
+          "Générez des tests de cas limites à l'aide de Copilot.",
+          "Enregistrez le modèle d'invite final pour la réutilisation par l'équipe."
+        ]
+      },
+      "expected_outcomes": [
+        "Gain de qualité clair à partir d'invites plus fortes.",
+        "Modèle d'invite réutilisable pour le travail API.",
+        "Taux de défauts inférieur grâce aux contraintes explicites."
+      ]
+    },
+    "day4": {
+      "title": "Introduction aux espaces Copilot",
+      "duration": 45,
+      "objectives": [
+        "Comprendre les espaces Copilot et quand les utiliser",
+        "Créer et gérer les espaces avec une gouvernance appropriée",
+        "Appliquer les techniques de mise à la terre du contexte"
+      ],
+      "section_titles": [
+        "Qu'est-ce qu'un espace Copilot ?",
+        "Définition du contexte et création d'espaces",
+        "Incitation dans les espaces pour des résultats fiables",
+        "Gouvernance, sécurité et mise à l'échelle",
+        "Exercice : Espaces pour les connaissances opérationnelles scolaires"
+      ],
+      "exercise": {
+        "title": "Créer un espace Copilot pour les opérations scolaires",
+        "steps": [
+          "Créez un espace pour le guide d'API des opérations scolaires.",
+          "Attachez les documents politiques clés.",
+          "Définissez le format de réponse et les règles de citation.",
+          "Testez les invites pour les scénarios d'assiduite et de notation.",
+          "Supprimez les fichiers à faible signal si les réponses sont génériques."
+        ]
+      },
+      "expected_outcomes": [
+        "Espace ciblé avec des réponses mises à la terre.",
+        "Intégration plus rapide pour les nouveaux développeurs.",
+        "Décisions de mise en œuvre cohérentes."
+      ]
+    },
+    "day5": {
+      "title": "Utilisation des fonctionnalités avancées de GitHub Copilot",
+      "duration": 45,
+      "objectives": [
+        "Maîtriser le chat en ligne, les commandes slash et les agents",
+        "Appliquer des flux de travail avancés à route/test/docs",
+        "Comprendre les invites implicites et les raccourcis"
+      ],
+      "section_titles": [
+        "Aperçu des fonctionnalités avancées",
+        "Le flux de travail en trois étapes",
+        "Commandes slash et invites implicites",
+        "Qualité et validation",
+        "Pratique avancée du flux de travail : Route de mise à jour d'inventaire, tests et documentation"
+      ],
+      "exercise": {
+        "title": "Implémenter le flux de travail de mise à jour du stock d'inventaire avec Copilot",
+        "steps": [
+          "Générez POST /stock-updates avec le chat en ligne.",
+          "Utilisez /tests pour créer des cas de test de succès et d'échec.",
+          "Ajoutez des vérifications d'idempotence pour les updateId répétés.",
+          "Utilisez le mode agent pour écrire la documentation des points de terminaison README.",
+          "Refactorisez pour une séparation propre contrôleur-service."
+        ]
+      },
+      "expected_outcomes": [
+        "Flux de travail de mise à jour du stock complet avec tests et documentation.",
+        "Utilisation pratique du chat en ligne, des commandes slash et des agents.",
+        "Confiance accrue avant la publication."
+      ]
+    },
+    "day6": {
+      "title": "GitHub Copilot dans tous les environnements",
+      "duration": 45,
+      "objectives": [
+        "Comparer Copilot dans l'IDE, Chat, GitHub.com et CLI",
+        "Maîtriser les références de fichiers, les commandes slash et les agents",
+        "Comprendre les flux de travail CLI et l'intégration GitHub.com"
+      ],
+      "section_titles": [
+        "Intégrations Copilot dans tous les environnements",
+        "Complétion de code et support linguistique",
+        "Fonctionnalités de Copilot Chat et GitHub.com",
+        "Flux de travail GitHub.com et CLI",
+        "Pratique multi-environnement : Incident de synchronisation d'inventaire"
+      ],
+      "exercise": {
+        "title": "Résoudre l'incident de synchronisation d'inventaire dans tous les environnements Copilot",
+        "steps": [
+          "Corrigez la logique de mappage de synchronisation avec les suggestions IDE.",
+          "Utilisez Chat avec les références #file pour expliquer le défaut et la stratégie de test.",
+          "Utilisez Copilot GitHub.com pour évaluer les risques PR avant la fusion.",
+          "Utilisez CLI Copilot pour générer les commandes de remplissage et de vérification.",
+          "Écrivez un bref résumé d'incident et les actions de suivi."
+        ]
+      },
+      "expected_outcomes": [
+        "Correction de synchronisation testée avec des conseils de déploiement sûr.",
+        "Utilisation pratique solide de tous les environnements Copilot.",
+        "Meilleure qualité de réponse aux incidents."
+      ]
+    },
+    "day7": {
+      "title": "Cas d'usage des développeurs pour l'IA avec GitHub Copilot",
+      "duration": 45,
+      "objectives": [
+        "Module d'espace réservé à compléter ultérieurement avec du contenu pratique",
+        "Préserver la séquence et le rappel pour expansion future"
+      ],
+      "section_titles": [
+        "Espace réservé du module différé",
+        "Différé",
+        "Différé",
+        "Différé",
+        "Différé"
+      ],
+      "exercise": {
+        "title": "Différé",
+        "steps": []
+      },
+      "expected_outcomes": []
+    },
+    "day8": {
+      "title": "Développer des tests unitaires en utilisant les outils GitHub Copilot",
+      "duration": 45,
+      "objectives": [
+        "Module d'espace réservé à compléter ultérieurement avec du contenu pratique",
+        "Préserver la séquence et le rappel pour expansion future"
+      ],
+      "section_titles": [
+        "Espace réservé du module différé",
+        "Différé",
+        "Différé",
+        "Différé",
+        "Différé"
+      ],
+      "exercise": {
+        "title": "Différé",
+        "steps": []
+      },
+      "expected_outcomes": []
+    }
+  }
+}

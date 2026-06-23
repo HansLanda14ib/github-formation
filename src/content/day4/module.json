@@ -1,0 +1,244 @@
+{
+  "id": "module-4",
+  "day": 4,
+  "title": "Introduction to Copilot Spaces",
+  "duration": 45,
+  "objectives": [
+    "Understand Copilot Spaces and when to use them",
+    "Create and manage Spaces with proper governance",
+    "Apply context grounding techniques"
+  ],
+  "sections": [
+    {
+      "id": "m4-tell",
+      "title": "What is a Copilot Space?",
+      "kind": "tell",
+      "body": "A GitHub Copilot Space is a dedicated Copilot chat grounded in a curated set of context you choose. A Space acts like a focused LLM, and you can feed it GitHub files, issues, pull requests, and free-text instructions to provide context for your specific topic.\n\n**When to Use Spaces** — Use Spaces when you want consistent, reproducible answers on a tightly scoped topic like a service, runbook, or dataset. Spaces trade breadth for depth: narrowing context to what matters most produces more predictable, grounded responses.",
+      "bullets": [
+        "Grounded in curated context",
+        "Provides focused, reproducible answers",
+        "Ideal for narrow domains",
+        "Trades breadth for depth"
+      ]
+    },
+    {
+      "id": "m4-show",
+      "title": "Setting Context and Creating Spaces",
+      "kind": "show",
+      "body": "**Setting Context for Spaces**\n- Attaching files (uploads)\n- Adding free-text instructions\n- Linking GitHub issues and pull requests\n- Specifying repository references\n\n**Creating Your First Space**\n1. Define the purpose and narrow boundaries\n2. Choose high-signal context sources only\n3. Add clear free-text instructions\n4. Set ownership and maintenance responsibility\n5. Share with appropriate team members\n6. Document how to use the Space effectively",
+      "bullets": [
+        "Define narrow scope",
+        "Choose high-signal sources",
+        "Add explicit instructions",
+        "Set clear ownership"
+      ]
+    },
+    {
+      "id": "m4-demo",
+      "title": "Prompting in Spaces for Reliable Outputs",
+      "kind": "demo",
+      "body": "Effective prompting in Spaces follows patterns:\n1. Confirm intent explicitly\n2. Add concrete constraints (formats, ranges, file paths)\n3. Reference attached sources by name\n4. Request executable outputs with source references\n\nThis ensures grounded, verifiable, source-traceable responses.",
+      "bullets": [
+        "Confirm intent explicitly",
+        "Add concrete constraints",
+        "Reference attached sources",
+        "Request traceable outputs"
+      ]
+    },
+    {
+      "id": "m4-discuss",
+      "title": "Governance, Security, and Scale",
+      "kind": "discuss",
+      "body": "**Security & Access** — Spaces mirror GitHub permissions. No new access granted. Only surfaces what viewers can already see.\n\n**Scale Management** — Oversized Spaces with low-signal context degrade precision. Split into single-purpose Spaces when scope becomes too broad.\n\n**Branch-Specific Content** — Use narrow file references and add examples, or attach text files with exact content for historical snapshots.",
+      "bullets": [
+        "Mirror GitHub permissions",
+        "Manage size for precision",
+        "Use explicit file references",
+        "Split when scope bloats"
+      ]
+    },
+    {
+      "id": "m4-practice",
+      "title": "Exercise: Spaces for School Operations Knowledge",
+      "kind": "practice",
+      "body": "### Real-World Use Case\nBusiness Context:\nSchool procedures are spread across many files (attendance policy, grading rules, parent communication guide). New developers struggle to find consistent answers quickly.\n\nDeveloper Task:\nCreate a Copilot Space with school operation documents and use it to produce grounded implementation guidance for APIs.\n\nExample Input:\n- Attached files: attendance-policy.md, grading-rules.md, parent-notification.md\n- Prompt: \"Using attached rules, propose validation for attendance update API and required notifications.\"\n\nExpected Output:\n- Answer cites attached sources.\n- Clear validation steps and notification rules.\n- Escalation guidance for exceptional cases.\n\nWhy This Matters:\nCentralized knowledge helps teams build features faster and with consistent logic.\n\nGitHub Copilot Challenge:\nAsk Copilot in the Space to generate a checklist endpoint and force source citations; refine scope if answers become vague.",
+      "bullets": [
+        "Choose high-friction domain",
+        "Attach curated sources",
+        "Test answer consistency",
+        "Validate source grounding"
+      ]
+    }
+  ],
+  "exercise": {
+    "title": "Build a school-operations Copilot Space",
+    "steps": [
+      "Create a Space for school operations API guidance.",
+      "Attach key policy documents.",
+      "Define response format and citation rules.",
+      "Test prompts for attendance and grading scenarios.",
+      "Remove low-signal files if answers are generic."
+    ],
+    "expectedOutcomes": [
+      "Focused Space with grounded answers.",
+      "Faster onboarding for new developers.",
+      "Consistent implementation decisions."
+    ],
+    "troubleshooting": [
+      "If responses are vague, narrow the Space topic.",
+      "If citations are missing, require section references.",
+      "If answers conflict, remove outdated docs."
+    ],
+    "links": [
+      {
+        "label": "GitHub Skills: Copilot Spaces",
+        "href": "https://github.com/skills/scale-institutional-knowledge-using-copilot-spaces"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "m4-q1",
+      "question": "When is a Copilot Space the better choice than general repo-wide chat?",
+      "options": [
+        "When you need broad discovery across many repositories",
+        "When you want consistent, reproducible answers on a tightly scoped topic",
+        "When you want Copilot to automatically discover any relevant content",
+        "When you have no specific task in mind"
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m4-q2",
+      "question": "Which statement about Space ownership is true?",
+      "options": [
+        "Spaces must be organization-owned; personal Spaces aren't supported",
+        "The description changes Copilot's answers in the Space",
+        "You can choose personal or organization ownership, and descriptions are for human readers",
+        "Ownership can't be changed and descriptions affect answer quality"
+      ],
+      "answerIndex": 2,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m4-q3",
+      "question": "Which action does NOT add usable context in a Space?",
+      "options": [
+        "Attaching files or folders from a repository",
+        "Pasting URLs of GitHub issues and pull requests",
+        "Uploading a local text document or spreadsheet",
+        "@-mentioning a Copilot extension to run in Space chat"
+      ],
+      "answerIndex": 3,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m4-q4",
+      "question": "How do Spaces handle security and access?",
+      "options": [
+        "Spaces grant temporary read access to all linked repositories",
+        "Spaces mirror GitHub permissions and surface only what viewers can see",
+        "Spaces create copies of private content accessible to anyone with the link",
+        "Spaces require repo admins to approve each viewer manually"
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m4-q5",
+      "question": "For branch-specific guidance in a Space, what should you do?",
+      "options": [
+        "Change the repository's default branch",
+        "Rely on general chat to retrieve older versions",
+        "Narrow references to relevant files or attach text files with exact content",
+        "Paste sensitive historical content into free-text notes"
+      ],
+      "answerIndex": 2,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m4-q6",
+      "question": "Which prompting pattern best supports verifiable outputs?",
+      "options": [
+        "Ask for summaries without constraints to keep it creative",
+        "Confirm intent, add concrete constraints, request executable outputs with references",
+        "Use many broad instructions to widen context",
+        "Avoid referencing attached sources"
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m4-q7",
+      "question": "You notice size warnings and vague answers. What's the best next step?",
+      "options": [
+        "Add more examples to increase context",
+        "Reduce sources or split into smaller focused Spaces",
+        "Start @-mentioning people to pull in expertise",
+        "Turn off repository linking"
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    }
+  ],
+  "agenda": [
+    {
+      "label": "Tell",
+      "minutes": 10,
+      "focus": "What Copilot Spaces are and why they matter"
+    },
+    {
+      "label": "Show",
+      "minutes": 10,
+      "focus": "Setting context and creating your first Space"
+    },
+    {
+      "label": "Demo",
+      "minutes": 8,
+      "focus": "Prompting patterns for grounded outputs"
+    },
+    {
+      "label": "Discuss",
+      "minutes": 7,
+      "focus": "Security, access, and scaling Spaces"
+    },
+    {
+      "label": "Practice",
+      "minutes": 10,
+      "focus": "Democratize tribal knowledge exercise"
+    }
+  ],
+  "units": [
+    {
+      "title": "Introduction to Copilot Spaces",
+      "uid": "learn.github.copilot-spaces.introduction"
+    },
+    {
+      "title": "Setting context for Copilot Spaces",
+      "uid": "learn.github.copilot-spaces.context"
+    },
+    {
+      "title": "Creating your first Space",
+      "uid": "learn.github.copilot-spaces.create-first-space"
+    },
+    {
+      "title": "Exercise - Democratize tribal knowledge using Copilot Spaces",
+      "uid": "learn.github.copilot-spaces.exercise"
+    },
+    {
+      "title": "Module assessment",
+      "uid": "learn.github.copilot-spaces.knowledge-check"
+    }
+  ],
+  "officialAlignment": [
+    "Mapped from docs/gh300-part-1.md module 4 including all 7 assessment questions.",
+    "Covers reproducibility, governance, and secure access behavior in Spaces."
+  ],
+  "officialDocs": [
+    {
+      "title": "Copilot Spaces Exercise",
+      "href": "https://github.com/skills/scale-institutional-knowledge-using-copilot-spaces"
+    }
+  ]
+}

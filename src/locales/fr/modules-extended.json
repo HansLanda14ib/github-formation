@@ -1,0 +1,243 @@
+{
+  "modules": {
+    "day3": {
+      "title": "Introduction à l'ingénierie des invites avec GitHub Copilot",
+      "objectives": [
+        "Maîtriser la méthode 4S pour les invites efficaces",
+        "Comprendre les stratégies d'apprentissage et le flux de processus",
+        "Appliquer les meilleures pratiques pour des suggestions de qualité"
+      ],
+      "sections": {
+        "m3-tell": {
+          "title": "Fondations de l'ingénierie des invites",
+          "body": "L'ingénierie des invites est le processus de création d'instructions claires et de contexte pour obtenir les meilleurs résultats de l'IA. La qualité de votre invite affecte directement la qualité de la réponse.\n\nLa méthode 4S offre un cadre structuré :\n\n**Scénario** : Définissez le contexte et les conditions\n**Spécialité** : Spécifiez le rôle ou l'expertise requis\n**Spécification** : Décrivez la sortie souhaitée (format, longueur, style)\n**Samples** : Fournissez des exemples pour guider le résultat",
+          "bullets": [
+            "La qualité de l'invite = qualité de la réponse",
+            "La méthode 4S crée une structure cohérente",
+            "Les invites faibles produisent des résultats génériques",
+            "Les invites claires et détaillées améliorent la précision"
+          ]
+        },
+        "m3-show": {
+          "title": "Meilleures pratiques et stratégies d'apprentissage",
+          "body": "Plusieurs stratégies améliorent l'efficacité des invites :\n\n**Zero-Shot** : Pas d'exemple - demandez directement\n**One-Shot** : Fournir un exemple unique\n**Few-Shot** : Fournir 2-3 exemples pour établir un modèle\n**Chain Prompting** : Diviser les tâches complexes en étapes\n**Role Prompting** : Assigner un rôle d'expert (« Vous êtes un expert en sécurité... »)\n**Reasoning Prompting** : Demander \"Pourquoi\" ou \"Explique ton raisonnement\"\n\nLes meilleures pratiques incluent :\n- Être spécifique et détaillé\n- Utiliser un langage naturel plutôt que des mots-clés\n- Briser les tâches complexes\n- Itérer et affiner les invites",
+          "bullets": [
+            "Zero-shot, one-shot, few-shot établissent les attentes",
+            "Chain prompting pour les tâches complexes",
+            "Role prompting améliore la spécialisation",
+            "L'itération affine les résultats",
+            "Soyez spécifique sur le format et le ton souhaités"
+          ]
+        },
+        "m3-demo": {
+          "title": "Incitation par rôle et flux de processus",
+          "body": "**Exemple 1 : Rôle d'expert en sécurité**\n\"Vous êtes un expert en sécurité des applications avec 15 ans d'expérience. Examinez ce code Node.js pour les vulnérabilités courantes. Listez chaque problème, le risque et la correction suggérée.\"\n\n**Exemple 2 : Rôle de développeur senior**\n\"Vous êtes un développeur senior examinant le code d'un junior. Donnez des commentaires d'amélioration au lieu de réécrire. Soyez constructif et encourageant.\"\n\n**Exemple 3 : Rôle de testeur QA**\n\"Vous êtes un testeur QA. Générez 5 cas de test pour cette fonction de paiement, couvrant succès, entrées invalides et cas limites.\"\n\n**Flux de processus (10 étapes) :**\n1. Définir le problème clairement\n2. Spécifier les entrées et les résultats attendus\n3. Demander des exemples ou des modèles\n4. Affiner les détails (longueur, format, ton)\n5. Ajouter des contraintes (performance, conformité)\n6. Assigner un rôle si nécessaire\n7. Générer\n8. Examiner et valider\n9. Itérer ou affiner\n10. Finaliser et réutiliser",
+          "bullets": [
+            "Les invites par rôle donnent contexte et expertise",
+            "Le flux de processus structure la création d'invites",
+            "La validation et l'itération améliorent la qualité",
+            "Les invites réussies sont réutilisables"
+          ]
+        },
+        "m3-discuss": {
+          "title": "Gestion des données et limites de contexte",
+          "body": "**Rétention des données :**\n- Les suggestions de code en ligne ne sont PAS conservées par Copilot\n- Les messages Copilot Chat sont conservés pendant 28 jours\n- Les données ne sont pas utilisées pour entraîner les modèles (sauf si vous acceptez)\n\n**Limites de contexte :**\n- Les fenêtres de contexte sont d'environ 4 000 jetons (approximativement 3 000 mots)\n- Les fichiers importants doivent être inclus manuellement (#file dans Chat)\n- Les invites plus longues peuvent réduire la performance\n- Gardez le contexte ciblé et pertinent\n\n**Sécurité et confidentialité :**\n- N'incluez jamais de secrets, tokens ou données sensibles\n- Nettoyez les données PII (informations d'identification personnelle)\n- Examinez les résultats pour les données sensibles accidentellement incluses",
+          "bullets": [
+            "Les suggestions en ligne ne sont pas conservées",
+            "Chat est conservé pendant 28 jours",
+            "Les limites de contexte d'environ 4 000 jetons",
+            "Gardez les données sensibles hors des invites"
+          ]
+        },
+        "m3-practice": {
+          "title": "Pratique de l'ingénierie des invites : API de demande d'inventaire",
+          "body": "### Comparaison : Invites faible vs améliorée\n\n**Invite faible :**\n\"Créer une API d'inventaire\"\n\n→ Résultat : Code générique sans gestion des erreurs ni validation\n\n**Invite améliorée (4S) :**\n\"Vous êtes un expert API REST. Créez un endpoint POST /inventory/requests pour une application scolaire.\n\nScénario : Les enseignants soumettent des demandes de fournitures. Stockez l'ID de l'enseignant, la catégorie (papier, fournitures, technologie), la quantité et la date.\n\nSpécialité : Expertise en Express.js, MongoDB et gestion des erreurs.\n\nSpécification : Retournez JSON 201 avec l'ID de demande ou 400 pour les entrées invalides. Incluez la validation des quantités > 0.\n\nSamples :\nEntrée : { 'teacherId': 'T123', 'category': 'paper', 'quantity': 100 }\nSortie : { 'requestId': 'REQ-456', 'status': 'pending', 'createdAt': '2026-06-22T10:30:00Z' }\"\n\n→ Résultat : Code structuré avec validation, gestion des erreurs et réponses cohérentes",
+          "bullets": [
+            "Les invites détaillées produisent un code de meilleure qualité",
+            "La spécification des formats réduit les itérations",
+            "Les exemples guident le style et la structure",
+            "Les invites réutilisables économisent le temps"
+          ]
+        }
+      },
+      "exercise": {
+        "title": "Améliorer la génération de point de terminaison d'inventaire avec des invites 4S",
+        "steps": [
+          "Générez un point de terminaison avec une invite faible et notez les lacunes.",
+          "Réécrivez l'invite avec 4S et des règles de validation explicites.",
+          "Utilisez des exemples one-shot/few-shot pour aligner le style.",
+          "Générez des tests de cas limites à l'aide de Copilot.",
+          "Enregistrez le modèle d'invite final pour la réutilisation par l'équipe."
+        ],
+        "expectedOutcomes": [
+          "Gain de qualité clair à partir d'invites plus fortes.",
+          "Modèle d'invite réutilisable pour le travail API.",
+          "Taux de défauts inférieur grâce aux contraintes explicites."
+        ],
+        "troubleshooting": [
+          "Si le code est générique, ajoutez des exemples de sortie souhaitée.",
+          "Si les cas limites sont manquants, spécifiez les scénarios d'erreur attendus.",
+          "Si le style dérive, fournissez des conventions de code explicites."
+        ]
+      },
+      "quiz": [
+        {
+          "id": "m3-q1",
+          "question": "Qu'est-ce que GitHub Copilot ?",
+          "options": [
+            "Un langage de programmation",
+            "Un service de révision de code",
+            "Un assistant alimenté par l'IA pour l'assistance au codage et le développement logiciel",
+            "Une base de données cloud"
+          ],
+          "answerIndex": 2,
+          "discussionPrompt": "Comment l'ingénierie des invites améliore les résultats de Copilot ?"
+        },
+        {
+          "id": "m3-q2",
+          "question": "Quel rôle joue l'incitation dans l'utilisation effective de GitHub Copilot ?",
+          "options": [
+            "Les invites n'influencent pas les résultats",
+            "Meilleure qualité d'invite = meilleure qualité de résultat",
+            "Les invites sont uniquement pour les utilisateurs avancés",
+            "Les invites ne peuvent pas être personnalisées"
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Avez-vous remarqué une différence dans les résultats de Copilot avec des invites détaillées ?"
+        },
+        {
+          "id": "m3-q3",
+          "question": "Lequel des éléments suivants est un principe de la méthode 4S ?",
+          "options": [
+            "Seulement la vitesse",
+            "Scénario, Spécialité, Spécification, Samples",
+            "Secret, Simple, Standard, Sûr",
+            "Système, Source, Syntaxe, Sémantique"
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Comment appliquez-vous la méthode 4S dans vos invites quotidiennes ?"
+        },
+        {
+          "id": "m3-q4",
+          "question": "Comment GitHub Copilot gère-t-il les données personnelles ?",
+          "options": [
+            "Les données sont toujours conservées indéfiniment",
+            "Les suggestions de code ne sont pas conservées, Chat conservé 28 jours",
+            "Les données ne sont jamais consultées",
+            "Les données sont partagées avec des tiers"
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Quelles précautions prenez-vous pour éviter de partager les données sensibles ?"
+        },
+        {
+          "id": "m3-q5",
+          "question": "Comment Copilot utilise-t-il le contexte pour fournir des suggestions ?",
+          "options": [
+            "Il ignore complètement le contexte",
+            "Il utilise le contexte du fichier actuel et les fragments de code pertinents",
+            "Il n'utilise que les commentaires",
+            "Il génère du code aléatoire"
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Comment organisez-vous votre code pour aider Copilot à comprendre le contexte ?"
+        },
+        {
+          "id": "m3-q6",
+          "question": "Quelle stratégie améliore l'efficacité des invites ?",
+          "options": [
+            "Invites vagues et générales",
+            "Zero-shot, one-shot, few-shot, chain prompting",
+            "Aucune stratégie n'est nécessaire",
+            "Utiliser des abréviations pour les invites courtes"
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Laquelle des stratégies utilisez-vous le plus souvent ?"
+        },
+        {
+          "id": "m3-q7",
+          "question": "Quel est l'avantage principal de la méthode 4S ?",
+          "options": [
+            "Cela rend les invites plus longues",
+            "Cela crée une structure cohérente et améliore la qualité des résultats",
+            "Cela garantit toujours la perfection",
+            "C'est seulement pour les codeurs experts"
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Quel élément de la méthode 4S trouvez-vous le plus utile ?"
+        }
+      ],
+      "agenda": [
+        {
+          "label": "Tell",
+          "minutes": 10,
+          "focus": "Fondations de l'ingénierie des invites et méthode 4S"
+        },
+        {
+          "label": "Show",
+          "minutes": 10,
+          "focus": "Meilleures pratiques et stratégies d'apprentissage"
+        },
+        {
+          "label": "Demo",
+          "minutes": 8,
+          "focus": "Incitation par rôle et flux de processus"
+        },
+        {
+          "label": "Discuss",
+          "minutes": 7,
+          "focus": "Gestion des données et limites de contexte"
+        },
+        {
+          "label": "Practice",
+          "minutes": 10,
+          "focus": "Atelier d'affinement des invites"
+        }
+      ],
+      "trainerNotes": [
+        "Montrez plusieurs itérations de la même invite - les participants doivent voir la progression",
+        "Laissez-les écrire et tester leurs propres invites",
+        "Soulignez que l'ingénierie des invites est une compétence - elle s'améliore avec la pratique",
+        "Montrez les pièges courants : invites vagues, contexte manquant, attentes peu claires",
+        "Partagez des modèles d'invites que l'équipe peut réutiliser"
+      ]
+    },
+    "day4": {
+      "title": "Introduction aux espaces Copilot",
+      "objectives": [
+        "Comprendre les espaces Copilot et quand les utiliser",
+        "Créer et gérer les espaces avec une gouvernance appropriée",
+        "Appliquer les techniques de mise à la terre du contexte"
+      ]
+    },
+    "day5": {
+      "title": "Utilisation des fonctionnalités avancées de GitHub Copilot",
+      "objectives": [
+        "Maîtriser le chat en ligne, les commandes slash et les agents",
+        "Appliquer des flux de travail avancés à route/test/docs",
+        "Comprendre les invites implicites et les raccourcis"
+      ]
+    },
+    "day6": {
+      "title": "GitHub Copilot dans tous les environnements",
+      "objectives": [
+        "Comparer Copilot dans l'IDE, Chat, GitHub.com et CLI",
+        "Maîtriser les références de fichiers, les commandes slash et les agents",
+        "Comprendre les flux de travail CLI et l'intégration GitHub.com"
+      ]
+    },
+    "day7": {
+      "title": "Cas d'usage des développeurs pour l'IA avec GitHub Copilot",
+      "objectives": [
+        "Module d'espace réservé à compléter ultérieurement avec du contenu pratique",
+        "Préserver la séquence et le rappel pour expansion future"
+      ]
+    },
+    "day8": {
+      "title": "Développer des tests unitaires en utilisant les outils GitHub Copilot",
+      "objectives": [
+        "Module d'espace réservé à compléter ultérieurement avec du contenu pratique",
+        "Préserver la séquence et le rappel pour expansion future"
+      ]
+    }
+  }
+}

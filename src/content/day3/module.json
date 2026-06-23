@@ -1,0 +1,245 @@
+{
+  "id": "module-3",
+  "day": 3,
+  "title": "Introduction to prompt engineering with GitHub Copilot",
+  "duration": 45,
+  "objectives": [
+    "Master the 4S method for effective prompts",
+    "Understand learning strategies and process flow",
+    "Apply best practices for quality suggestions"
+  ],
+  "sections": [
+    {
+      "id": "m3-tell",
+      "title": "Prompt Engineering Foundations",
+      "kind": "tell",
+      "body": "Prompt engineering is the process of crafting clear instructions to guide AI systems like Copilot to generate context-appropriate code tailored to your project. This ensures code is syntactically, functionally, and contextually correct.\n\n**The 4S Method:**\n\n**Single** — Focus on one task per prompt. Break complex requests into multiple focused prompts.\n\n**Specific** — Use explicit, detailed instructions. Specify requirements, constraints, formats, and edge cases.\n\n**Short** — Keep prompts concise and direct. Each word should add value without overloading the AI.\n\n**Surround** — Use descriptive filenames and keep related files open. This provides rich context for better suggestions.",
+      "bullets": [
+        "Single: one task focus",
+        "Specific: explicit constraints",
+        "Short: concise language",
+        "Surround: rich context"
+      ]
+    },
+    {
+      "id": "m3-show",
+      "title": "Best Practices and Learning Strategies",
+      "kind": "show",
+      "body": "**Provide Enough Clarity** — Be explicit in your prompts. Example: \"Write a Python function to filter and return even numbers from a given list\" is both single-focused and specific.\n\n![alt text](image-1.png)\n\n**Provide Context with Details** — The more contextual information provided, the more fitting the suggestions. Add comments at the top of code to give Copilot more understanding.\n\n![alt text](image-2.png)\n\n**Provide Examples for Learning** — Using examples clarifies requirements and helps Copilot understand patterns quickly, reducing revision cycles.\n\n![alt text](image-3.png)\n\n**Assert and Iterate** — Your first prompt might not yield production-ready code. Enrich your initial comment and prompt again. This iterative approach accelerates development.\n\n**Zero-Shot Learning** — Generate code without examples, relying on foundational training. Ideal for standard patterns.\n\n![alt text](image-4.png)\n\n**One-Shot Learning** — Provide a single example to help Copilot follow your specific patterns and conventions.\n\n![alt text](image-5.png)\n\n**Few-Shot Learning** — Use multiple examples to balance zero-shot unpredictability with fine-tuning precision.\n\n![alt text](image-6.png)\n\n**Chain Prompting** — For complex features, manage long conversations by summarizing context, resetting with focused details, and using concise references.",
+      "bullets": [
+        "Be explicit and clear",
+        "Provide sufficient context",
+        "Use examples to guide learning",
+        "Iterate strategically",
+        "Chain prompts for complex work"
+      ]
+    },
+    {
+      "id": "m3-demo",
+      "title": "Role Prompting and Process Flow",
+      "kind": "demo",
+      "body": "**Role Prompting** — Act as a specific expert for specialized tasks:\n- Security Expert: \"Create a password validation function following OWASP guidelines.\"\n- Performance Expert: \"Refactor this sorting algorithm for large datasets.\"\n- Testing Specialist: \"Create comprehensive unit tests including edge cases.\"\n\n**Process Flow — Inbound**\n1. Secure transmission via HTTPS\n2. Context gathering (code, files, project structure)\n3. Fill-in-the-Middle (FIM) analysis\n4. Proxy filtering for malicious requests\n5. Content & safety filtering\n6. Code generation with LLMs\n\n![alt text](image-7.png)\n\n**Process Flow — Outbound**\n7. Post-processing & validation\n8. Safety checks (XSS, SQL injection)\n9. Delivery of validated suggestions\n10. Feedback loop for continuous improvement\n\n![alt text](image-8.png)",
+      "bullets": [
+        "Use role prompting for expertise",
+        "Understand 7-step process flow",
+        "Trust safety filtering layers",
+        "System learns from your feedback"
+      ]
+    },
+    {
+      "id": "m3-discuss",
+      "title": "Data Handling and Context Limits",
+      "kind": "discuss",
+      "body": "**Code Suggestions** — Prompts and context are NOT retained for training. Discarded after suggestion is returned. Individual subscribers can opt out of sharing.\n\n**Copilot Chat** — Prompts and responses retained for 28 days outside the code editor. Retention policies may vary in IDE integrations.\n\n**Supported Prompts** — Direct questions, code requests, open-ended queries, and contextual prompts.\n\n**Context Windows** — Standard Copilot: 200-500 lines or few thousand tokens. Copilot Chat: ~4000 tokens (4K context window).\n\nTo improve results: Break complex tasks into smaller prompts, provide only relevant snippets, ask focused questions.",
+      "bullets": [
+        "Code suggestions not retained for training",
+        "Chat history: 28-day retention",
+        "Context window: ~4K tokens",
+        "Decompose large tasks"
+      ]
+    },
+    {
+      "id": "m3-practice",
+      "title": "Prompt Engineering Practice: Inventory Request API",
+      "kind": "practice",
+      "body": "### Real-World Use Case\nBusiness Context:\nA small store team is building an inventory request API. Vague prompts are producing incomplete code and causing bugs in stock updates.\n\nDeveloper Task:\nCompare weak vs improved prompts to generate POST /requests in Express, then refine with the 4S method to include validation and status rules.\n\nExample Input:\nWeak Prompt:\n\"Create an inventory request endpoint.\"\n\nImproved Prompt:\n\"In Node.js + Express + MongoDB, create POST /requests. Validate itemId exists, quantity > 0, allowed status is PENDING or APPROVED, return 201 on success and 400/404 for errors. Include Jest tests.\"\n\nExpected Output:\n- Endpoint with clear validation and status transitions.\n- Clean controller/service separation.\n- Tests for invalid item, invalid quantity, and success flow.\n\nWhy This Matters:\nBetter prompts reduce bugs and save developer review time.\n\nGitHub Copilot Challenge:\nGenerate a first draft from a weak prompt, then iteratively improve with 4S and role prompting until code and tests pass.",
+      "bullets": [
+        "Write baseline weak prompts",
+        "Apply 4S principles",
+        "Add concrete examples",
+        "Measure quality improvements"
+      ]
+    }
+  ],
+  "exercise": {
+    "title": "Improve inventory endpoint generation with 4S prompts",
+    "steps": [
+      "Generate endpoint with a weak prompt and note gaps.",
+      "Rewrite prompt with 4S and explicit validation rules.",
+      "Use one-shot/few-shot examples to align style.",
+      "Generate edge-case tests using Copilot.",
+      "Save final prompt template for team reuse."
+    ],
+    "expectedOutcomes": [
+      "Clear quality gain from stronger prompts.",
+      "Reusable prompt template for API work.",
+      "Lower defect rate through explicit constraints."
+    ],
+    "troubleshooting": [
+      "If code is generic, include exact response schema.",
+      "If tests miss edge cases, add negative examples in prompt.",
+      "If style drifts, include surrounding-file context."
+    ],
+    "links": [
+      {
+        "label": "Prompt Engineering Guide",
+        "href": "https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/prompt-engineering-for-copilot-chat"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "m3-q1",
+      "question": "What is GitHub Copilot?",
+      "options": [
+        "A platform for code repositories.",
+        "A model powered by machine learning.",
+        "An assistant for coding, powered by OpenAI.",
+        "A service for web hosting."
+      ],
+      "answerIndex": 2,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m3-q2",
+      "question": "What role does prompting play in utilizing GitHub Copilot effectively?",
+      "options": [
+        "It generates instant bug fixes.",
+        "It enhances the quality of code suggestions.",
+        "It automates the coding process entirely.",
+        "It implements real-time collaboration."
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m3-q3",
+      "question": "Which of the following rules is a principle of the 4S method?",
+      "options": [
+        "Summarize code objectives concisely.",
+        "Specify instructions explicitly and in detail.",
+        "Streamline processes for efficient suggestions.",
+        "Simplify coding languages for universal understanding."
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m3-q4",
+      "question": "How does GitHub Copilot handle personal data?",
+      "options": [
+        "It saves all personal data for future references.",
+        "It shares personal data with other users.",
+        "It encrypts personal data.",
+        "It actively filters out personal data to protect privacy."
+      ],
+      "answerIndex": 3,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m3-q5",
+      "question": "How does Copilot use context to provide suggestions?",
+      "options": [
+        "It considers only the prompt text.",
+        "It considers only file type, not content.",
+        "It considers surrounding code, file type, and open tabs.",
+        "It randomly selects context from the internet."
+      ],
+      "answerIndex": 2,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m3-q6",
+      "question": "Which strategy helps improve prompt effectiveness?",
+      "options": [
+        "Making prompts as general as possible.",
+        "Keeping prompts lengthy and detailed.",
+        "Avoiding examples to not restrict creativity.",
+        "Providing detailed contextual information with clarity."
+      ],
+      "answerIndex": 3,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m3-q7",
+      "question": "What is the primary benefit of the 4S method?",
+      "options": [
+        "It makes prompts longer.",
+        "It balances clarity, specificity, and conciseness for better results.",
+        "It eliminates the need for code review.",
+        "It guarantees perfect code on first try."
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    }
+  ],
+  "agenda": [
+    {
+      "label": "Tell",
+      "minutes": 10,
+      "focus": "Prompt engineering foundations and 4S method"
+    },
+    {
+      "label": "Show",
+      "minutes": 10,
+      "focus": "Best practices and learning strategies"
+    },
+    {
+      "label": "Demo",
+      "minutes": 8,
+      "focus": "Role prompting and process flow"
+    },
+    {
+      "label": "Discuss",
+      "minutes": 7,
+      "focus": "Data handling and context limits"
+    },
+    {
+      "label": "Practice",
+      "minutes": 10,
+      "focus": "Prompt refinement workshop"
+    }
+  ],
+  "units": [
+    {
+      "title": "Prompt engineering foundations and best practices",
+      "uid": "learn.github.introduction-prompt-engineering-with-github-copilot.prompt-engineering-foundations-best-practices"
+    },
+    {
+      "title": "Examples: zero-shot, one-shot, few-shot",
+      "uid": "learn.github.introduction-prompt-engineering-with-github-copilot.examples"
+    },
+    {
+      "title": "GitHub Copilot user prompt process flow",
+      "uid": "learn.github.introduction-prompt-engineering-with-github-copilot.github-copilot-user-prompt-process-flow"
+    },
+    {
+      "title": "Data handling in GitHub Copilot",
+      "uid": "learn.github.introduction-prompt-engineering-with-github-copilot.github-copilot-data"
+    },
+    {
+      "title": "Module assessment",
+      "uid": "learn.github.introduction-prompt-engineering-with-github-copilot.knowledge-check"
+    }
+  ],
+  "officialAlignment": [
+    "Mapped from docs/gh300-part-1.md module 3 with full 4S model and process flow.",
+    "Includes image references image-1.png through image-8.png from source content."
+  ],
+  "officialDocs": [
+    {
+      "title": "Prompt Engineering for Copilot Chat",
+      "href": "https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/prompt-engineering-for-copilot-chat"
+    }
+  ]
+}

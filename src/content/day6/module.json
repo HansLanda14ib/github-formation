@@ -1,0 +1,230 @@
+{
+  "id": "module-6",
+  "day": 6,
+  "title": "GitHub Copilot Across Environments",
+  "duration": 45,
+  "objectives": [
+    "Compare Copilot across IDE, Chat, GitHub.com, and CLI",
+    "Master file references, slash commands, and agents",
+    "Understand CLI workflows and GitHub.com integration"
+  ],
+  "sections": [
+    {
+      "id": "m6-tell",
+      "title": "Copilot Integrations Across All Environments",
+      "kind": "tell",
+      "body": "GitHub Copilot integrates across multiple development environments: IDEs (VS Code, JetBrains), GitHub.com web interface, command line, and the GitHub Copilot Chat interface. Each environment has specialized strengths for different workflow phases and team roles.",
+      "bullets": [
+        "IDE: seamless local development",
+        "Chat: complex reasoning",
+        "GitHub.com: PR and issue workflows",
+        "CLI: command-line operations"
+      ]
+    },
+    {
+      "id": "m6-show",
+      "title": "Code Completion and Language Support",
+      "kind": "show",
+      "body": "**Supported Languages:**\nPython, JavaScript, Java, TypeScript, Ruby, Go, C#, C++ (with exceptional support), plus many others.\n\n**Using Comments for Suggestions:**\nCopilot leverages comments to understand intent and generate relevant suggestions.\n\n**Comment Types Supported:**\n- Inline comments — brief explanations beside code\n- Block comments — detailed descriptions\n- Docstrings — structured documentation (e.g., Python)\n- TODO comments — notes for future work\n- API documentation — method and parameter descriptions\n\n**Comment-Driven Code Generation:**\nCopilot uses comments to generate implementations, improve completions, suggest variable names, and select algorithms.",
+      "bullets": [
+        "8 primary languages with full support",
+        "Many other languages supported",
+        "Comments drive code generation",
+        "NLP interprets intent from comments"
+      ]
+    },
+    {
+      "id": "m6-demo",
+      "title": "Copilot Chat and GitHub.com Features",
+      "kind": "demo",
+      "body": "**When to Use Copilot Chat:**\n- Complex code generation (algorithms, boilerplate, regex, SQL)\n- Debugging assistance (errors, logical issues)\n- Code explanations (complex code, patterns)\n- Code refactoring (readability, performance)\n- Test generation (unit tests)\n- Documentation creation (docstrings, API docs)\n\n**Scope Referencing:**\n- File references: `#file:authController.js`\n- Environment: `@terminal` for command-line context\n\n**Slash Commands:**\n- `/doc` — Generate documentation\n- `/explain` — Explain code\n- `/fix` — Suggest fixes\n- `/generate` — Create new code\n- `/optimize` — Improve performance\n- `/tests` — Generate tests\n\n**Agents:**\n- `/new` — Create new projects\n- `@terminal` — Command-line help\n- `@vscode` — VS Code-specific help",
+      "bullets": [
+        "Chat for complex reasoning",
+        "File references anchor context",
+        "Slash commands reduce verbosity",
+        "Agents provide specialization"
+      ]
+    },
+    {
+      "id": "m6-discuss",
+      "title": "GitHub.com and CLI Workflows",
+      "kind": "discuss",
+      "body": "**GitHub.com Features:**\n- Pull request summaries\n- Code review assistance\n- Issue management\n- Repository exploration\n- Error explanation in GitHub Actions\n\n**Copilot CLI:**\nInstall via Homebrew. Launch with `copilot`. Use interactive mode or one-shot prompts:\n```bash\ncopilot -i \"explain brew install git\"\ncopilot -i \"suggest find large files\"\n```\n\n**CLI Slash Commands:**\n- `/help` — Show available commands\n- `/explain <command>` — Explain shell command\n- `/suggest <task>` — Suggest command for task\n- `/revise` — Revise last suggestion\n- `/feedback` — Submit feedback\n- `/exit` — Exit interactive mode",
+      "bullets": [
+        "GitHub.com for web-based workflows",
+        "CLI for command-line operations",
+        "Both require validation before execution"
+      ]
+    },
+    {
+      "id": "m6-practice",
+      "title": "Cross-Environment Practice: Inventory Sync Incident",
+      "kind": "practice",
+      "body": "### Real-World Use Case\nBusiness Context:\nA production issue shows differences between warehouse stock and app stock. The team must inspect code, PRs, logs, and scripts quickly to restore data consistency.\n\nDeveloper Task:\nUse Copilot across IDE, Chat, GitHub.com, and CLI to diagnose inventory sync failures, patch the sync job, and prepare safe deployment.\n\nExample Input:\n```json\n{\n  \"itemId\": \"ITM-9001\",\n  \"expectedQuantity\": 540,\n  \"actualQuantity\": 490,\n  \"syncJob\": \"nightly-inventory-sync\",\n  \"lastRun\": \"2026-06-21T01:00:00Z\"\n}\n```\n\nExpected Output:\n- Root-cause analysis identifying mapping or merge bug.\n- Patch with updated tests and PR summary.\n- CLI command plan for safe backfill and verification.\n\nWhy This Matters:\nWrong inventory counts lead to out-of-stock errors and delayed deliveries.\n\nGitHub Copilot Challenge:\nUse IDE for code fixes, Chat for explanation and tests, GitHub.com for PR review, and CLI for safe backfill commands.",
+      "bullets": [
+        "Choose environment by task scope",
+        "Use references and commands effectively",
+        "Maintain validation discipline"
+      ]
+    }
+  ],
+  "exercise": {
+    "title": "Resolve inventory sync incident across Copilot environments",
+    "steps": [
+      "Patch sync mapping logic with IDE suggestions.",
+      "Use Chat with #file references to explain defect and test strategy.",
+      "Use GitHub.com Copilot to review PR risks before merge.",
+      "Use CLI Copilot to generate backfill and verification commands.",
+      "Write a short incident summary and follow-up actions."
+    ],
+    "expectedOutcomes": [
+      "Tested sync fix with safe deployment guidance.",
+      "Strong practical use of all Copilot environments.",
+      "Better incident response quality."
+    ],
+    "troubleshooting": [
+      "If CLI commands look risky, ask for dry-run alternatives first.",
+      "If PR review misses edge cases, ask explicitly for duplicate/merge checks.",
+      "If explanations are weak, include exact file and failing test context."
+    ],
+    "links": [
+      {
+        "label": "Copilot Documentation",
+        "href": "https://docs.github.com/en/copilot/about-github-copilot"
+      },
+      {
+        "label": "CLI Documentation",
+        "href": "https://docs.github.com/en/copilot/github-copilot-in-the-cli/using-github-copilot-in-the-cli"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "m6-q1",
+      "question": "Which language is NOT mentioned as receiving strong Copilot support?",
+      "options": [
+        "Python",
+        "JavaScript",
+        "Rust",
+        "Ruby"
+      ],
+      "answerIndex": 2,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m6-q2",
+      "question": "Which slash command generates unit tests?",
+      "options": [
+        "/generate",
+        "/test",
+        "/tests",
+        "/unittest"
+      ],
+      "answerIndex": 2,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m6-q3",
+      "question": "How do you explain a shell command using Copilot CLI?",
+      "options": [
+        "gh copilot suggest",
+        "gh copilot explain",
+        "gh copilot clarify",
+        "gh copilot describe"
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m6-q4",
+      "question": "Which is NOT a use case for Copilot on GitHub.com?",
+      "options": [
+        "Generating pull request summaries",
+        "Explaining repository code and structure",
+        "Compiling and deploying applications",
+        "Suggesting code review comments"
+      ],
+      "answerIndex": 2,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m6-q5",
+      "question": "What important billing consideration applies to Copilot Code Review?",
+      "options": [
+        "It's completely free with no usage limits",
+        "It consumes Premium Request Units (PRUs)",
+        "It only works with paid GitHub Enterprise",
+        "It requires a separate subscription"
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    }
+  ],
+  "agenda": [
+    {
+      "label": "Tell",
+      "minutes": 10,
+      "focus": "Copilot across IDE, Chat, GitHub.com, CLI"
+    },
+    {
+      "label": "Show",
+      "minutes": 10,
+      "focus": "Supported languages and comment-driven coding"
+    },
+    {
+      "label": "Demo",
+      "minutes": 8,
+      "focus": "Chat references, slash commands, and agents"
+    },
+    {
+      "label": "Discuss",
+      "minutes": 7,
+      "focus": "GitHub.com and CLI workflows"
+    },
+    {
+      "label": "Practice",
+      "minutes": 10,
+      "focus": "Cross-environment scenario selection"
+    }
+  ],
+  "units": [
+    {
+      "title": "Introduction",
+      "uid": "learn.github.github-copilot-across-environments.introduction"
+    },
+    {
+      "title": "Code completion with GitHub Copilot",
+      "uid": "learn.github.github-copilot-across-environments.code-completion"
+    },
+    {
+      "title": "GitHub Copilot Chat",
+      "uid": "learn.github.github-copilot-across-environments.copilot-chat"
+    },
+    {
+      "title": "GitHub Copilot on GitHub.com",
+      "uid": "learn.github.github-copilot-across-environments.github-dot-com"
+    },
+    {
+      "title": "GitHub Copilot for the command line",
+      "uid": "learn.github.github-copilot-across-environments.cli"
+    },
+    {
+      "title": "Module assessment",
+      "uid": "learn.github.github-copilot-across-environments.knowledge-check"
+    }
+  ],
+  "officialAlignment": [
+    "Mapped from docs/gh300-part-1.md module 6 including CLI command table and workflows.",
+    "Preserves language support list and all 5 assessment questions."
+  ],
+  "officialDocs": [
+    {
+      "title": "GitHub Copilot Docs",
+      "href": "https://docs.github.com/en/copilot/about-github-copilot"
+    },
+    {
+      "title": "Copilot CLI Docs",
+      "href": "https://docs.github.com/en/copilot/github-copilot-in-the-cli/using-github-copilot-in-the-cli"
+    }
+  ]
+}

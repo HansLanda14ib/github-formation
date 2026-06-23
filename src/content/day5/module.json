@@ -1,0 +1,214 @@
+{
+  "id": "module-5",
+  "day": 5,
+  "title": "Using advanced GitHub Copilot features",
+  "duration": 45,
+  "objectives": [
+    "Master inline chat, slash commands, and agents",
+    "Apply advanced workflows to route/test/docs",
+    "Understand implicit prompts and shortcuts"
+  ],
+  "sections": [
+    {
+      "id": "m5-tell",
+      "title": "Advanced Features Overview",
+      "kind": "tell",
+      "body": "Advanced features enable faster, more efficient development workflows. This module covers:\n- **Inline Chat** — Scoped conversations using Ctrl+I (Windows/Linux) or Cmd+I (Mac)\n- **Slash Commands** — Shortcuts like /tests, /explain, /suggest, /comment\n- **Agents** — Specialized context for multi-step workflows\n- **Implicit Prompts** — Commands that work without long explanations",
+      "bullets": [
+        "Inline chat for in-file modifications",
+        "Slash commands for quick shortcuts",
+        "Agents for specialized tasks"
+      ]
+    },
+    {
+      "id": "m5-show",
+      "title": "The Three-Step Workflow",
+      "kind": "show",
+      "body": "**Step 1: Add a New Route**\nOpen main.py and use inline chat (Ctrl+I / Cmd+I) with prompt:\n> Create a new route that exposes the cities of a country/region.\n\n**Step 2: Create a Test**\nGenerate a test using the /tests command:\n> /tests help me create a new test for this route that uses Spain as the country/region.\n\n**Step 3: Write Documentation**\nUse agent-based prompt in Copilot Chat:\n> I want to document how to run this project so other developers can get started quickly by reading the README.md file.\n\nThis three-step pattern demonstrates complete workflow integration.",
+      "bullets": [
+        "Step 1: Inline chat for route creation",
+        "Step 2: /tests command for testing",
+        "Step 3: Agent mode for documentation"
+      ]
+    },
+    {
+      "id": "m5-demo",
+      "title": "Slash Commands and Implicit Prompts",
+      "kind": "demo",
+      "body": "**Common Slash Commands:**\n- `/explain` — Explains selected code\n- `/suggest` — Suggests code based on context\n- `/tests` — Generates unit tests\n- `/comment` — Converts comments to code\n\n**Implicit Prompts** — Use commands without repeating full context, making interactions faster and more focused when intent is clear.",
+      "bullets": [
+        "Commands replace verbose prompts",
+        "Implicit prompts when intent is clear",
+        "Combine with constraints for best results"
+      ]
+    },
+    {
+      "id": "m5-discuss",
+      "title": "Quality and Validation",
+      "kind": "discuss",
+      "body": "Advanced features increase speed but require consistent validation. Generated routes must match API contracts. Generated tests need assertion coverage. Generated documentation must be executable and complete. Never skip review despite command shortcuts.",
+      "bullets": [
+        "Always review generated artifacts",
+        "Validate against requirements",
+        "Document acceptance decisions"
+      ]
+    },
+    {
+      "id": "m5-practice",
+      "title": "Advanced Workflow Practice: Inventory Update Route, Tests, and Docs",
+      "kind": "practice",
+      "body": "### Real-World Use Case\nBusiness Context:\nA warehouse team needs a new endpoint to register incoming stock and update item availability. Release cannot proceed without tests and updated developer documentation.\n\nDeveloper Task:\nUse advanced Copilot features to implement POST /stock-updates, generate tests, and update README for the Inventory API.\n\nExample Input:\n```json\n{\n  \"updateId\": \"UPD-2026-031\",\n  \"itemId\": \"ITM-9001\",\n  \"quantityAdded\": 120,\n  \"warehouse\": \"MAIN\",\n  \"receivedAt\": \"2026-06-21T14:10:00Z\"\n}\n```\n\nExpected Output:\n- Route creates stock update and increments item quantity.\n- Tests cover success, missing item, duplicate updateId, and invalid quantity.\n- README includes endpoint usage and run/test commands.\n\nWhy This Matters:\nAccurate stock updates prevent order failures and customer complaints.\n\nGitHub Copilot Challenge:\nUse inline chat for route generation, /tests for test scaffolding, and agent mode for documentation; then refactor for idempotency.",
+      "bullets": [
+        "Master inline chat shortcuts",
+        "Practice /tests command",
+        "Write agent-based prompts"
+      ]
+    }
+  ],
+  "exercise": {
+    "title": "Implement inventory stock update workflow with Copilot",
+    "steps": [
+      "Generate POST /stock-updates with inline chat.",
+      "Use /tests to create success and failure test cases.",
+      "Add idempotency checks for repeated updateId.",
+      "Use agent mode to write README endpoint docs.",
+      "Refactor for clean controller-service separation."
+    ],
+    "expectedOutcomes": [
+      "Complete stock update workflow with tests and docs.",
+      "Practical use of inline chat, slash commands, and agents.",
+      "Higher confidence before release."
+    ],
+    "troubleshooting": [
+      "If stock is updated twice, enforce idempotency checks.",
+      "If tests are flaky, isolate fixtures and reset state.",
+      "If docs are vague, request endpoint-specific examples."
+    ],
+    "links": [
+      {
+        "label": "GitHub Skills: Advanced Copilot",
+        "href": "https://github.com/skills/github-codespaces-and-github-copilot"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "id": "m5-q1",
+      "question": "What is ghost text in GitHub Copilot?",
+      "options": [
+        "Ghost text refers to suggestions that appear in your text editor as you type.",
+        "Ghost text are options used when typing to provide suggestions.",
+        "Ghost text involves using prompts and questions within your code or documentation."
+      ],
+      "answerIndex": 0,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m5-q2",
+      "question": "How do you access GitHub Copilot's inline chat?",
+      "options": [
+        "Click on the chat icon in the left sidebar of VS Code.",
+        "Use Ctrl+I on Windows or Cmd+I on Mac to open inline chat.",
+        "Use Alt+I on Windows or Option+I on Mac."
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m5-q3",
+      "question": "What are slash commands used for?",
+      "options": [
+        "Slash commands format your codebase according to best practices.",
+        "Slash commands debug code and detect security vulnerabilities.",
+        "Slash commands are shortcuts to quickly perform common development tasks."
+      ],
+      "answerIndex": 2,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m5-q4",
+      "question": "What are the benefits of using agents like @terminal?",
+      "options": [
+        "Agents help you ask questions within a specific context for more precise answers.",
+        "Agents enforce consistent code format based on best practices.",
+        "Agents provide security features for detecting vulnerabilities."
+      ],
+      "answerIndex": 0,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    },
+    {
+      "id": "m5-q5",
+      "question": "What are the benefits of using implicit prompts with slash commands?",
+      "options": [
+        "Implicit prompts enforce consistent naming and syntax conventions.",
+        "Implicit prompts get better responses without writing longer prompts.",
+        "Implicit prompts detect security vulnerabilities in your code."
+      ],
+      "answerIndex": 1,
+      "discussionPrompt": "How would you apply this concept to your own projects?"
+    }
+  ],
+  "agenda": [
+    {
+      "label": "Tell",
+      "minutes": 10,
+      "focus": "Advanced Copilot capabilities"
+    },
+    {
+      "label": "Show",
+      "minutes": 10,
+      "focus": "Codespaces setup and workflow overview"
+    },
+    {
+      "label": "Demo",
+      "minutes": 8,
+      "focus": "Route creation, tests, and agent docs"
+    },
+    {
+      "label": "Discuss",
+      "minutes": 7,
+      "focus": "Validation and quality checks"
+    },
+    {
+      "label": "Practice",
+      "minutes": 10,
+      "focus": "Hands-on advanced feature exercise"
+    }
+  ],
+  "units": [
+    {
+      "title": "Introduction",
+      "uid": "learn.advanced-github-copilot.introduction"
+    },
+    {
+      "title": "Codespaces setup",
+      "uid": "learn.advanced-github-copilot.setup"
+    },
+    {
+      "title": "Step 1: Add a new route",
+      "uid": "learn.advanced-github-copilot.step-1"
+    },
+    {
+      "title": "Step 2: Create a test",
+      "uid": "learn.advanced-github-copilot.step-2"
+    },
+    {
+      "title": "Step 3: Use an agent to write documentation",
+      "uid": "learn.advanced-github-copilot.step-3"
+    },
+    {
+      "title": "Module assessment",
+      "uid": "learn.advanced-github-copilot.knowledge-check"
+    }
+  ],
+  "officialAlignment": [
+    "Mapped from docs/gh300-part-1.md module 5 including exact exercise prompts.",
+    "Includes ghost text, inline chat, slash commands, agents, and implicit prompting coverage."
+  ],
+  "officialDocs": [
+    {
+      "title": "GitHub Codespaces + Copilot",
+      "href": "https://github.com/skills/github-codespaces-and-github-copilot"
+    }
+  ]
+}

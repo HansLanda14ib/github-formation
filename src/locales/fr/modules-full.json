@@ -1,0 +1,356 @@
+{
+  "modules": {
+    "day1": {
+      "title": "IA responsable avec GitHub Copilot",
+      "objectives": [
+        "Comprendre les six principes de l'IA responsable de Microsoft",
+        "Reconnaître les risques de l'IA et les stratégies d'atténuation",
+        "Appliquer des pratiques d'IA responsable à la génération de code"
+      ],
+      "sections": {
+        "m1-tell": {
+          "title": "Principes de l'IA responsable",
+          "body": "L'IA responsable est la pratique de développer, d'évaluer et de déployer des systèmes d'IA de manière sûre, éthique et fiable. Puisque les systèmes d'IA reflètent les décisions de leurs créateurs et utilisateurs, l'IA responsable promeut des résultats équitables, fiables, transparents et centrés sur l'homme, garantissant que la technologie s'aligne sur les besoins et les valeurs des gens.\n\nL'IA offre des avantages importants mais introduit également des risques tels que le manque de transparence, les résultats biaisés et les préoccupations en matière de confidentialité. Les organisations doivent établir des cadres de gouvernance solides, assurer la transparence et maintenir la surveillance humaine.\n\nMicrosoft et GitHub identifient six principes clés qui doivent guider le développement et l'utilisation de l'IA.",
+          "bullets": [
+            "L'IA reflète les décisions des créateurs et des utilisateurs",
+            "L'IA responsable promeut l'équité, la fiabilité et la transparence",
+            "La gouvernance, la transparence et la surveillance sont essentielles"
+          ]
+        },
+        "m1-show": {
+          "title": "Six principes de l'IA responsable",
+          "body": "Les six principes de Microsoft fournissent un cadre complet pour le développement responsable de l'IA :\n\n**1. Équité**\nLes systèmes d'IA doivent traiter toutes les personnes équitablement et éviter les résultats biaisés ou discriminatoires. Cela nécessite d'examiner les données d'entraînement, de tester avec des échantillons équilibrés et d'utiliser des techniques de débiaisage contradictoire pour identifier et atténuer les biais dans les groupes démographiques.\n\n**2. Fiabilité et sécurité**\nLes systèmes d'IA doivent fonctionner de manière fiable et sûre dans diverses conditions. La fiabilité signifie une performance cohérente et prévisible. La sécurité signifie que le système ne causera pas de tort ou d'échecs inattendus, en particulier dans les applications critiques.\n\n**3. Confidentialité et sécurité**\nLes systèmes d'IA doivent être sécurisés et respecter la confidentialité des utilisateurs. Cela inclut la protection des données personnelles, l'utilisation du chiffrement, la mise en œuvre de contrôles d'accès et le respect des réglementations de confidentialité comme le RGPD.\n\n**4. Inclusivité**\nLes systèmes d'IA doivent permettre à chacun et être accessibles aux personnes ayant des capacités et des origines diverses. Cela signifie tenir compte de l'accessibilité, du support multilingue et de la sensibilité culturelle dans la conception.\n\n**5. Transparence**\nLes systèmes d'IA doivent être compréhensibles. Les utilisateurs et les développeurs doivent comprendre comment le système fonctionne, quelles données il utilise et comment les décisions sont prises. Cela renforce la confiance et la responsabilité.\n\n**6. Responsabilité**\nLes gens doivent être responsables des systèmes d'IA. Des chaînes de propriété claires, la documentation et la responsabilité garantissent que s'il y a un problème, il y a un chemin clair pour l'aborder.",
+          "bullets": [
+            "Équité : traitement égal dans les groupes",
+            "Fiabilité et sécurité : performance cohérente et sûre",
+            "Confidentialité et sécurité : protéger les données des utilisateurs",
+            "Inclusivité : accessible à tous",
+            "Transparence : opérations compréhensibles",
+            "Responsabilité : responsabilité claire"
+          ]
+        },
+        "m1-demo": {
+          "title": "Atténuation des risques de l'IA en pratique",
+          "body": "Lors de l'utilisation de GitHub Copilot, les développeurs doivent examiner attentivement le code généré par l'IA pour :\n- Assurer l'alignement avec les conventions et exigences spécifiques au projet\n- Vérifier les implications de sécurité et de confidentialité\n- Vérifier la logique biaisée ou injuste\n- Valider l'exactitude fonctionnelle\n- S'assurer qu'aucune donnée sensible n'est incluse\n\nExemple : Si Copilot génère du code avec des identifiants en dur ou des informations d'identification personnelle, rejetez-le et fournissez un contexte qui exclut ces données.",
+          "bullets": [
+            "Toujours examiner le code généré par l'IA",
+            "Vérifier les problèmes de sécurité et les biais",
+            "Valider l'exactitude fonctionnelle",
+            "Assurer l'absence d'inclusion de données sensibles"
+          ]
+        },
+        "m1-discuss": {
+          "title": "Gouvernance et surveillance humaine",
+          "body": "Les organisations mettant en œuvre l'IA doivent :\n- Établir des cadres de gouvernance clairs définissant l'utilisation acceptable\n- Maintenir la surveillance humaine aux points de décision critiques\n- Surveiller les conséquences involontaires\n- Fournir une formation sur les pratiques d'IA responsable\n- Documenter les décisions et maintenir les pistes d'audit\n- Collecter les commentaires et s'améliorer continuellement",
+          "bullets": [
+            "Les cadres de gouvernance définissent l'utilisation acceptable",
+            "Surveillance humaine aux points critiques",
+            "Surveillance et audit des décisions de l'IA",
+            "Amélioration continue grâce aux commentaires"
+          ]
+        },
+        "m1-practice": {
+          "title": "Pratique de l'IA responsable : Priorités d'aide équitable aux étudiants",
+          "body": "### Cas d'usage réel\nContexte commercial :\nUne école utilise une application simple pour prioriser les demandes d'aide aux étudiants (conseil, aide administrative, aide technique). Le personnel a remarqué que des demandes similaires recevaient parfois des niveaux de priorité différents, causant de la confusion et des problèmes de confiance.\n\nTâche du développeur :\nConstruire et examiner un assistant de priorisation d'aide assisté par Copilot pour les tickets de support, en s'assurant qu'il suit les règles d'équité, de transparence, de confidentialité et de responsabilité.\n\nExemple d'entrée :\n```json\n{\n  \"ticketId\": \"SUP-104\",\n  \"category\": \"counseling\",\n  \"urgency\": \"medium\",\n  \"submittedAt\": \"2026-06-21T09:30:00Z\",\n  \"studentId\": \"STD-2001\"\n}\n```\n\nRésultat attendu :\n```json\n{\n  \"ticketId\": \"SUP-104\",\n  \"priority\": \"MEDIUM\",\n  \"reasonCodes\": [\"category\", \"urgency\", \"submission_time\"],\n  \"requiresHumanReview\": true\n}\n```\n\nPourquoi c'est important :\nUne priorisation équitable et claire aide les étudiants à recevoir un traitement égal et réduit les plaintes.\n\nDéfi GitHub Copilot :\nDemandez à Copilot de générer un assistant Node.js/Express qui calcule la priorité du support, puis améliorez-le avec des codes de raison explicables, une journalisation sûre et des cas de test d'équité.",
+          "bullets": [
+            "Examiner le code généré systématiquement",
+            "Tester dans des contextes diversifiés",
+            "Documenter et discuter les implications éthiques",
+            "Créer des directives organisationnelles"
+          ]
+        }
+      },
+      "exercise": {
+        "title": "Examen de l'IA responsable pour la priorisation du soutien scolaire",
+        "steps": [
+          "Générez un assistant de priorisation d'aide avec Copilot.",
+          "Ajoutez des contrôles d'équité et de transparence.",
+          "Supprimez les données sensibles des journaux.",
+          "Écrivez des tests pour les scénarios de priorité équivalente.",
+          "Documentez les décisions de gouvernance dans le fichier README."
+        ],
+        "expectedOutcomes": [
+          "Un assistant de priorisation équitable et explicable.",
+          "Logique de validation claire et prête pour l'audit.",
+          "Confiance dans l'application de l'IA responsable dans le développement quotidien."
+        ],
+        "troubleshooting": [
+          "Si les résultats semblent biaisés, supprimez les attributs personnels non essentiels.",
+          "Si les journaux contiennent des données privées, ajoutez un utilitaire de rédaction.",
+          "Si la priorité est peu claire, exigez des codes de raison explicites."
+        ]
+      },
+      "quiz": [
+        {
+          "id": "m1-q1",
+          "question": "Quel est l'objectif principal de l'IA responsable ?",
+          "options": [
+            "Maximiser les profits des systèmes d'IA.",
+            "Développer les systèmes d'IA aussi rapidement que possible.",
+            "Assurer que les systèmes d'IA sont sûrs, fiables et éthiques.",
+            "Remplacer la prise de décision humaine par l'IA."
+          ],
+          "answerIndex": 2,
+          "discussionPrompt": "Comment vous assurez-vous que les systèmes d'IA s'alignent sur les valeurs humaines dans vos projets ?"
+        },
+        {
+          "id": "m1-q2",
+          "question": "Quel principe n'est PAS l'un des six identifiés par Microsoft ?",
+          "options": [
+            "Équité.",
+            "Innovation.",
+            "Inclusivité.",
+            "Responsabilité."
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "À quoi le principe d'Innovation se rapporterait-il s'il faisait partie de l'IA responsable ?"
+        },
+        {
+          "id": "m1-q3",
+          "question": "Que met l'accent sur l'équité dans l'IA responsable ?",
+          "options": [
+            "Maximiser la performance de l'IA à tout prix.",
+            "Assurer que les systèmes d'IA fonctionnent de manière égale dans tous les groupes démographiques.",
+            "Prioriser la rentabilité plutôt que les préoccupations éthiques.",
+            "Créer des systèmes d'IA faciles à comprendre."
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Comment les développeurs peuvent-ils tester l'équité du code généré par l'IA ?"
+        },
+        {
+          "id": "m1-q4",
+          "question": "Comment Microsoft aborde-t-il les biais potentiels dans les systèmes d'IA ?",
+          "options": [
+            "En ignorant le problème et en se concentrant sur d'autres domaines.",
+            "En fournissant aux systèmes d'IA plus de données.",
+            "En examinant les données d'entraînement, en testant avec des échantillons équilibrés et en utilisant le débiaisage contradictoire.",
+            "En permettant aux utilisateurs de modifier directement les résultats du système d'IA."
+          ],
+          "answerIndex": 2,
+          "discussionPrompt": "Quelles stratégies supplémentaires d'atténuation des biais recommanderiez-vous ?"
+        },
+        {
+          "id": "m1-q5",
+          "question": "Quel est le rôle de la transparence ?",
+          "options": [
+            "Garder les opérations d'IA secrètes du public.",
+            "Rendre les opérations et les décisions des systèmes d'IA compréhensibles et claires.",
+            "Masquer les limitations des systèmes d'IA.",
+            "Prioriser l'efficacité plutôt que les considérations éthiques."
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Comment communiquez-vous la transparence du système d'IA aux parties prenantes non techniques ?"
+        },
+        {
+          "id": "m1-q6",
+          "question": "Pourquoi examiner attentivement le code généré par l'IA ?",
+          "options": [
+            "Pour réduire le temps de développement.",
+            "Pour assurer l'alignement avec les conventions et exigences du projet.",
+            "Pour améliorer l'aspect créatif du codage.",
+            "Pour améliorer automatiquement la performance du système."
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Quelle liste de contrôle de révision créeriez-vous pour le code généré par l'IA ?"
+        }
+      ],
+      "agenda": [
+        {
+          "label": "Tell",
+          "minutes": 10,
+          "focus": "Fondations de l'IA responsable et atténuation des risques"
+        },
+        {
+          "label": "Show",
+          "minutes": 10,
+          "focus": "Six principes Microsoft et GitHub"
+        },
+        {
+          "label": "Demo",
+          "minutes": 8,
+          "focus": "Examen responsable du code généré par l'IA"
+        },
+        {
+          "label": "Discuss",
+          "minutes": 7,
+          "focus": "Gouvernance, surveillance et responsabilité"
+        },
+        {
+          "label": "Practice",
+          "minutes": 10,
+          "focus": "Appliquer les principes aux scénarios de révision de code"
+        }
+      ],
+      "trainerNotes": [
+        "Insistez sur le fait que l'IA responsable n'est pas une restriction mais une capacité positive",
+        "Les exemples réels du secteur résonnent - préparez 2-3 études de cas",
+        "Interactif : demandez aux participants comment ils géreraient chaque scénario",
+        "La gouvernance n'est pas « un seul et unique » - encouragez l'adaptation organisationnelle",
+        "Soulignez le risque commercial : biais = problèmes légaux et de réputation"
+      ]
+    },
+    "day2": {
+      "title": "Introduction à GitHub Copilot",
+      "objectives": [
+        "Décrire les capacités et fonctionnalités de GitHub Copilot",
+        "Maîtriser tous les modes d'interaction",
+        "Configurer Copilot dans votre IDE"
+      ],
+      "sections": {
+        "m2-tell": {
+          "title": "GitHub Copilot — Votre programmeur en pair IA",
+          "body": "L'IA transforme le développement logiciel en aidant les équipes à construire, tester et livrer des applications plus efficacement. GitHub Copilot agit comme un programmeur en pair IA, soutenant les développeurs dans les langages de programmation populaires.\n\nLes principaux avantages signalés incluent :\n- 46% du nouveau code généré par l'IA\n- 55% d'augmentation de la productivité des développeurs\n- 74% des développeurs se sentant plus concentrés sur le travail significatif\n\nGitHub Copilot a été développé par GitHub et Microsoft en collaboration avec OpenAI. Il est alimenté par OpenAI Codex, un modèle spécialisé dans la génération de code et entraîné sur une grande quantité de code source public.",
+          "bullets": [
+            "46% du nouveau code généré par l'IA",
+            "55% d'augmentation de productivité signalée",
+            "Alimenté par OpenAI Codex"
+          ]
+        },
+        "m2-show": {
+          "title": "Fonctionnalités de GitHub Copilot",
+          "body": "GitHub Copilot fournit plusieurs capacités dans les environnements de développement :\n\n**Copilot Chat** — Chat interactif directement dans les éditeurs pris en charge pour poser des questions, obtenir des explications, générer des tests et explorer de nouvelles fonctionnalités.\n\n**Résumés de demande d'extraction** — Générer automatiquement des résumés des modifications d'une PR et l'analyse d'impact.\n\n**Assistance à la révision de code** — Suggestions assistées par l'IA lors de la révision de code, y compris les bugs potentiels et les problèmes de sécurité.\n\n**Copilot pour l'interface de ligne de commande** — Utiliser Copilot dans la ligne de commande pour expliquer les commandes shell et apprendre les modèles de script.\n\n**Espaces Copilot** — Contextes de chat dédiés ancrés dans des dépôts et documents curatés.\n\n**Agent Cloud Copilot** — Flux de travail avancés basés sur les agents pour les tâches de développement complexes et multi-étapes.",
+          "bullets": [
+            "Chat pour l'assistance interactive",
+            "Résumés de PR pour la révision de code",
+            "CLI pour l'aide en ligne de commande",
+            "Espaces pour un contexte ciblé"
+          ]
+        },
+        "m2-demo": {
+          "title": "Modes d'interaction — Toutes les méthodes",
+          "body": "**Suggestions en ligne** — Complétions de code en temps réel au fur et à mesure que vous tapez, prédisant ce que vous voulez écrire ensuite.\n\n**Palette de commandes** — Accès rapide aux fonctions Copilot avec des raccourcis clavier.\n\n**Copilot Chat** — Communication en langage naturel interactif pour les demandes complexes.\n\n**Chat en ligne** — Conversations spécifiques au contexte directement dans votre éditeur de code en utilisant Ctrl+I (Windows/Linux) ou Cmd+I (Mac).\n\n**Commandes slash** — Raccourcis comme /explain, /suggest, /tests, /comment pour les tâches courantes.\n\n**Commentaires vers code** — Décrire les fonctionnalités en commentaires en langage naturel; Copilot génère l'implémentation.\n\n**Génération automatique de tests** — Sélectionnez le code et utilisez la palette de commandes pour générer des tests unitaires.",
+          "bullets": [
+            "Suggestions en ligne pour l'auto-complétion",
+            "Ctrl+I / Cmd+I pour le chat en ligne",
+            "Commandes slash pour les raccourcis",
+            "Les commentaires animent la génération de code"
+          ]
+        },
+        "m2-discuss": {
+          "title": "Configuration et paramétrage",
+          "body": "La configuration de Copilot nécessite :\n- Installer l'extension Copilot dans VS Code, Visual Studio ou un éditeur pris en charge\n- Installer GitHub Copilot CLI pour l'assistance en ligne de commande\n- S'authentifier avec le compte GitHub\n- S'assurer de l'accès réseau et des permissions appropriées\n\nLes considérations de configuration incluent les paramètres d'intégration de l'éditeur, le support des langues/frameworks, les préférences de confidentialité et les politiques organisationnelles.",
+          "bullets": [
+            "Installer l'extension dans votre IDE",
+            "S'authentifier avec GitHub",
+            "Configurer les paramètres de l'éditeur",
+            "Respecter les politiques organisationnelles"
+          ]
+        },
+        "m2-practice": {
+          "title": "Pratique avec Copilot : Intégration des étudiants et des classes",
+          "body": "### Cas d'usage réel\nContexte commercial :\nUne école lance un portail Web pour les enseignants. Les enseignants doivent rapidement enregistrer les étudiants et les assigner aux classes sans feuilles de calcul manuelles.\n\nTâche du développeur :\nUtiliser les modes d'interaction de Copilot pour construire les points de terminaison POST /students et POST /classes dans Express avec validation MongoDB et gestion des erreurs.\n\nExemple d'entrée :\n```json\n{\n  \"student\": {\n    \"studentId\": \"STD-3007\",\n    \"fullName\": \"Sara Idrissi\",\n    \"email\": \"sara.idrissi@school.edu\"\n  },\n  \"class\": {\n    \"classCode\": \"MATH-8A\",\n    \"teacher\": \"Mr. Karim\",\n    \"room\": \"B12\"\n  }\n}\n```\n\nRésultat attendu :\n- Routes Express pour la création d'étudiants et de classes.\n- Persistance MongoDB avec vérifications de doublons.\n- 201 pour le succès et 400/409 pour les données invalides ou dupliquées.\n\nPourquoi c'est important :\nL'intégration précise réduit la charge administrative et prévient les erreurs de planification.\n\nDéfi GitHub Copilot :\nDemandez à Copilot d'échafauder les routes et les modèles, puis améliorez la validation, les vérifications de doublons et les tests d'intégration.",
+          "bullets": [
+            "Pratiquer tous les modes d'interaction",
+            "Générer et examiner les suggestions",
+            "Créer des tests avec Copilot",
+            "Valider la qualité des résultats"
+          ]
+        }
+      },
+      "exercise": {
+        "title": "Implémenter les API d'intégration des étudiants et des classes avec Copilot",
+        "steps": [
+          "Échafaudez les schémas Student et Class avec les suggestions en ligne.",
+          "Générez les gestionnaires POST /students et POST /classes en utilisant le chat en ligne.",
+          "Ajoutez la gestion des doublons et les erreurs structurées avec Copilot Chat.",
+          "Générez des tests pour les succès, les charges utiles invalides et les doublons.",
+          "Affinez la lisibilité du code et la documentation avant la révision finale."
+        ],
+        "expectedOutcomes": [
+          "Points de terminaison d'intégration fonctionnels pour les étudiants et les classes.",
+          "Gestion fiable de la validation et des conflits.",
+          "Meilleure utilisation des modes d'interaction de Copilot."
+        ],
+        "troubleshooting": [
+          "Si la validation est manquante, ajoutez explicitement des vérifications de schéma.",
+          "Si les réponses sont incohérentes, utilisez le chat en ligne avec des exemples.",
+          "Si les tests échouent, demandez à Copilot de générer des tests d'intégration."
+        ]
+      },
+      "quiz": [
+        {
+          "id": "m2-q1",
+          "question": "Qu'est-ce que GitHub Copilot ?",
+          "options": [
+            "Un outil pour compresser le code",
+            "Un programmeur en pair alimenté par l'IA pour l'assistance au codage",
+            "Un service d'hébergement cloud",
+            "Un framework JavaScript"
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Comment Copilot s'intègre-t-il à votre flux de travail de développement ?"
+        },
+        {
+          "id": "m2-q2",
+          "question": "Quelles extensions IDE sont pris en charge pour GitHub Copilot ?",
+          "options": [
+            "Uniquement Visual Studio Code",
+            "VS Code, Visual Studio, JetBrains IDEs et autres",
+            "Uniquement Visual Studio",
+            "Uniquement les éditeurs Cloud"
+          ],
+          "answerIndex": 1,
+          "discussionPrompt": "Quel IDE préférez-vous pour travailler avec Copilot et pourquoi ?"
+        },
+        {
+          "id": "m2-q3",
+          "question": "Quelle est la différence entre GitHub Copilot Business et GitHub Copilot Enterprise ?",
+          "options": [
+            "Il n'y a pas de différence",
+            "Business est moins cher mais avec moins de fonctionnalités",
+            "Enterprise est uniquement pour les grandes organisations",
+            "Enterprise offre des fonctionnalités supplémentaires, des modèles personnalisés et le support"
+          ],
+          "answerIndex": 3,
+          "discussionPrompt": "Quel plan conviendrait le mieux à votre organisation ?"
+        },
+        {
+          "id": "m2-q4",
+          "question": "Quel plan inclut toutes les fonctionnalités Pro plus utilisation supplémentaire premium ?",
+          "options": [
+            "Plan Free",
+            "Plan Pro",
+            "Plan Business",
+            "Plan Enterprise"
+          ],
+          "answerIndex": 2,
+          "discussionPrompt": "Comment les organisations choisissent-elles entre Business et Enterprise ?"
+        }
+      ],
+      "agenda": [
+        {
+          "label": "Tell",
+          "minutes": 10,
+          "focus": "Fondamentaux de Copilot et proposition de valeur"
+        },
+        {
+          "label": "Show",
+          "minutes": 10,
+          "focus": "Visite des fonctionnalités : Chat, résumés PR, révision, CLI, Espaces"
+        },
+        {
+          "label": "Demo",
+          "minutes": 8,
+          "focus": "Suggestions en ligne, chat en ligne, commandes slash"
+        },
+        {
+          "label": "Discuss",
+          "minutes": 7,
+          "focus": "Configuration, paramétrage et dépannage"
+        },
+        {
+          "label": "Practice",
+          "minutes": 10,
+          "focus": "Atelier de compétences et préparation à l'évaluation"
+        }
+      ],
+      "trainerNotes": [
+        "Montrez-le en direct - les participants apprennent mieux en voyant",
+        "Laissez-les essayer chaque mode d'interaction eux-mêmes",
+        "Adressez les préoccupations courantes : sécurité du code, biais, dépendance",
+        "Montrez les cas limites : qu'est-ce que Copilot ne peut pas faire ?",
+        "Encouragez les questions - la compréhension des capacités est clé"
+      ]
+    }
+  }
+}

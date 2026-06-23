@@ -1,0 +1,81 @@
+{
+  "navigation": {
+    "dashboard": "Dashboard",
+    "journey": "Journey"
+  },
+  "dashboard": {
+    "title": "Trainer Companion Platform",
+    "subtitle": "Official GH-300 Part 1 Theoretical Course",
+    "currentModule": "Current Module",
+    "officialGuidance": "Official GitHub Copilot Guidance (Course Analysis)",
+    "buttons": {
+      "whatIsCopilot": "What is Copilot",
+      "copilotFeatures": "Copilot Features",
+      "promptEngineering": "Prompt Engineering",
+      "microsoftResponsibleAI": "Microsoft Responsible AI",
+      "githubCopilotBestPractices": "GitHub Copilot Best Practices"
+    },
+    "quickActions": {
+      "openModuleTheory": "Open Module Theory",
+      "openModuleTheoryBody": "Deliver the official GH-300 Part 1 module in unit-by-unit sequence.",
+      "openJourney": "Open Journey",
+      "openJourneyBody": "Navigate all official GH-300 Part 1 modules in order.",
+      "launchQuiz": "Launch Quiz",
+      "launchQuizBody": "Facilitate discussion-first quiz with controlled answer reveal.",
+      "trainerFocus": "Trainer Focus",
+      "trainerFocusBody": "Surface trainer notes, timing tips, and backup discussion points.",
+      "open": "Open"
+    },
+    "moduleInfo": "official units"
+  },
+  "journey": {
+    "title": "GH-300 Module Journey",
+    "subtitle": "Official GitHub Copilot Fundamentals Part 1 module sequence",
+    "module": "Module",
+    "officialUnits": "official units",
+    "openSession": "Open Session"
+  },
+  "session": {
+    "title": "Session",
+    "subtitle": "Official GH-300 Part 1 module flow with unit steps",
+    "objectives": "Objectives",
+    "unitSteps": "Unit Steps (Official Sequence)",
+    "theoreticalDeliveryAgenda": "Theoretical Delivery Agenda",
+    "officialGuidanceAlignment": "Official Guidance Alignment",
+    "minutes": "minutes"
+  },
+  "demo": {
+    "title": "Demo Mode",
+    "subtitle": "Large typography and low-distraction flow for screen sharing",
+    "trainerNotesVisible": "Trainer Notes Visible",
+    "trainerNotesHidden": "Trainer Notes Hidden"
+  },
+  "exercise": {
+    "title": "Exercise Mode",
+    "subtitle": "Guided practice with expected outcomes and troubleshooting",
+    "expectedOutcomes": "Expected Outcomes",
+    "troubleshootingTips": "Troubleshooting Tips",
+    "labLinks": "Lab Links"
+  },
+  "quiz": {
+    "title": "Quiz Mode",
+    "subtitle": "Discussion-first checks with manual answer reveal",
+    "facilitatorControls": "Facilitator Controls",
+    "revealed": "revealed",
+    "resetReveals": "Reset Reveals",
+    "revealAnswer": "Reveal Answer",
+    "answerRevealed": "Answer Revealed",
+    "discuss": "Discuss"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "subtitle": "The requested route is not available in this trainer build.",
+    "returnToDashboard": "Return to Dashboard"
+  },
+  "errors": {
+    "moduleNotFound": "The requested day does not exist."
+  },
+  "common": {
+    "moduleDay": "Module {{day}}: {{title}}"
+  }
+}

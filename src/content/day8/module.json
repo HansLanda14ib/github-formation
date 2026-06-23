@@ -1,0 +1,68 @@
+{
+  "id": "module-8",
+  "day": 8,
+  "title": "Develop unit tests using GitHub Copilot tools",
+  "duration": 45,
+  "objectives": [
+    "Placeholder module to be completed later with hands-on content",
+    "Preserve sequence and reminder for future expansion"
+  ],
+  "agenda": [
+    { "label": "Tell", "minutes": 45, "focus": "Deferred - will be designed later" }
+  ],
+  "units": [
+    { "title": "Introduction", "uid": "learn.wwl.develop-unit-tests-using-github-copilot-tools.introduction" }
+  ],
+  "officialAlignment": [
+    "Deferred by user request: module 8 will be completed later."
+  ],
+  "officialDocs": [
+    { "title": "Deferred Module Placeholder", "href": "https://learn.microsoft.com/en-us/training/courses/gh-300t00" }
+  ],
+  "sections": [
+    {
+      "id": "m8-tell",
+      "title": "Deferred Module Placeholder",
+      "kind": "tell",
+      "body": "This module is intentionally deferred as requested. We will turn it into a complete hands-on unit testing program later.",
+      "bullets": [
+        "Keep in roadmap",
+        "To be expanded with full test-focused curriculum"
+      ]
+    },
+    {
+      "id": "m8-show",
+      "title": "Deferred",
+      "kind": "show",
+      "body": "Deferred section.",
+      "bullets": []
+    },
+    {
+      "id": "m8-demo",
+      "title": "Deferred",
+      "kind": "demo",
+      "body": "Deferred section.",
+      "bullets": []
+    },
+    {
+      "id": "m8-discuss",
+      "title": "Deferred",
+      "kind": "discuss",
+      "body": "Deferred section.",
+      "bullets": []
+    },
+    {
+      "id": "m8-practice",
+      "title": "Deferred",
+      "kind": "practice",
+      "body": "Deferred section.",
+      "bullets": []
+    }
+  ],
+  "demo": { "title": "Deferred", "steps": [] },
+  "exercise": { "title": "Deferred", "steps": [], "expectedOutcomes": [], "troubleshooting": [], "links": [] },
+  "quiz": [],
+  "trainerNotes": [
+    "User requested module 8 to be completed later."
+  ]
+}

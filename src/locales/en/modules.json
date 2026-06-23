@@ -1,0 +1,230 @@
+{
+  "modules": {
+    "day1": {
+      "title": "Responsible AI with GitHub Copilot",
+      "duration": 45,
+      "objectives": [
+        "Understand Microsoft's six principles of Responsible AI",
+        "Recognize AI risks and mitigation strategies",
+        "Apply responsible AI practices to code generation"
+      ],
+      "section_titles": [
+        "Responsible AI Principles",
+        "Six Principles of Responsible AI",
+        "Mitigating AI Risks in Practice",
+        "Governance and Human Oversight",
+        "Responsible AI Practice: Fair Student Support Priorities"
+      ],
+      "exercise": {
+        "title": "Responsible AI review for school support prioritization",
+        "steps": [
+          "Generate a support priority helper using Copilot.",
+          "Add fairness and transparency checks.",
+          "Remove sensitive data from logs.",
+          "Write tests for equivalent-priority scenarios.",
+          "Document governance decisions in README."
+        ]
+      },
+      "expected_outcomes": [
+        "A fair and explainable prioritization helper.",
+        "Clear validation and audit-ready logic.",
+        "Confidence applying Responsible AI in daily development."
+      ]
+    },
+    "day2": {
+      "title": "Introduction to GitHub Copilot",
+      "duration": 45,
+      "objectives": [
+        "Describe GitHub Copilot capabilities and features",
+        "Master all interaction modes",
+        "Setup and configure Copilot in your IDE"
+      ],
+      "section_titles": [
+        "GitHub Copilot — Your AI Pair Programmer",
+        "GitHub Copilot Features",
+        "Interaction Modes — All Methods",
+        "Setup and Configuration",
+        "Practice with Copilot: Student and Class Onboarding"
+      ],
+      "exercise": {
+        "title": "Implement student and class onboarding APIs with Copilot",
+        "steps": [
+          "Scaffold Student and Class schemas with inline suggestions.",
+          "Generate POST /students and POST /classes handlers using inline chat.",
+          "Add duplicate handling and structured errors with Copilot Chat.",
+          "Generate tests for success, invalid payload, and duplicates.",
+          "Refine code readability and docs before final review."
+        ]
+      },
+      "expected_outcomes": [
+        "Working student/class onboarding endpoints.",
+        "Reliable validation and conflict handling.",
+        "Better use of Copilot interaction modes."
+      ]
+    },
+    "day3": {
+      "title": "Introduction to prompt engineering with GitHub Copilot",
+      "duration": 45,
+      "objectives": [
+        "Master the 4S method for effective prompts",
+        "Understand learning strategies and process flow",
+        "Apply best practices for quality suggestions"
+      ],
+      "section_titles": [
+        "Prompt Engineering Foundations",
+        "Best Practices and Learning Strategies",
+        "Role Prompting and Process Flow",
+        "Data Handling and Context Limits",
+        "Prompt Engineering Practice: Inventory Request API"
+      ],
+      "exercise": {
+        "title": "Improve inventory endpoint generation with 4S prompts",
+        "steps": [
+          "Generate endpoint with a weak prompt and note gaps.",
+          "Rewrite prompt with 4S and explicit validation rules.",
+          "Use one-shot/few-shot examples to align style.",
+          "Generate edge-case tests using Copilot.",
+          "Save final prompt template for team reuse."
+        ]
+      },
+      "expected_outcomes": [
+        "Clear quality gain from stronger prompts.",
+        "Reusable prompt template for API work.",
+        "Lower defect rate through explicit constraints."
+      ]
+    },
+    "day4": {
+      "title": "Introduction to Copilot Spaces",
+      "duration": 45,
+      "objectives": [
+        "Understand Copilot Spaces and when to use them",
+        "Create and manage Spaces with proper governance",
+        "Apply context grounding techniques"
+      ],
+      "section_titles": [
+        "What is a Copilot Space?",
+        "Setting Context and Creating Spaces",
+        "Prompting in Spaces for Reliable Outputs",
+        "Governance, Security, and Scale",
+        "Exercise: Spaces for School Operations Knowledge"
+      ],
+      "exercise": {
+        "title": "Build a school-operations Copilot Space",
+        "steps": [
+          "Create a Space for school operations API guidance.",
+          "Attach key policy documents.",
+          "Define response format and citation rules.",
+          "Test prompts for attendance and grading scenarios.",
+          "Remove low-signal files if answers are generic."
+        ]
+      },
+      "expected_outcomes": [
+        "Focused Space with grounded answers.",
+        "Faster onboarding for new developers.",
+        "Consistent implementation decisions."
+      ]
+    },
+    "day5": {
+      "title": "Using advanced GitHub Copilot features",
+      "duration": 45,
+      "objectives": [
+        "Master inline chat, slash commands, and agents",
+        "Apply advanced workflows to route/test/docs",
+        "Understand implicit prompts and shortcuts"
+      ],
+      "section_titles": [
+        "Advanced Features Overview",
+        "The Three-Step Workflow",
+        "Slash Commands and Implicit Prompts",
+        "Quality and Validation",
+        "Advanced Workflow Practice: Inventory Update Route, Tests, and Docs"
+      ],
+      "exercise": {
+        "title": "Implement inventory stock update workflow with Copilot",
+        "steps": [
+          "Generate POST /stock-updates with inline chat.",
+          "Use /tests to create success and failure test cases.",
+          "Add idempotency checks for repeated updateId.",
+          "Use agent mode to write README endpoint docs.",
+          "Refactor for clean controller-service separation."
+        ]
+      },
+      "expected_outcomes": [
+        "Complete stock update workflow with tests and docs.",
+        "Practical use of inline chat, slash commands, and agents.",
+        "Higher confidence before release."
+      ]
+    },
+    "day6": {
+      "title": "GitHub Copilot Across Environments",
+      "duration": 45,
+      "objectives": [
+        "Compare Copilot across IDE, Chat, GitHub.com, and CLI",
+        "Master file references, slash commands, and agents",
+        "Understand CLI workflows and GitHub.com integration"
+      ],
+      "section_titles": [
+        "Copilot Integrations Across All Environments",
+        "Code Completion and Language Support",
+        "Copilot Chat and GitHub.com Features",
+        "GitHub.com and CLI Workflows",
+        "Cross-Environment Practice: Inventory Sync Incident"
+      ],
+      "exercise": {
+        "title": "Resolve inventory sync incident across Copilot environments",
+        "steps": [
+          "Patch sync mapping logic with IDE suggestions.",
+          "Use Chat with #file references to explain defect and test strategy.",
+          "Use GitHub.com Copilot to review PR risks before merge.",
+          "Use CLI Copilot to generate backfill and verification commands.",
+          "Write a short incident summary and follow-up actions."
+        ]
+      },
+      "expected_outcomes": [
+        "Tested sync fix with safe deployment guidance.",
+        "Strong practical use of all Copilot environments.",
+        "Better incident response quality."
+      ]
+    },
+    "day7": {
+      "title": "Developer use cases for AI with GitHub Copilot",
+      "duration": 45,
+      "objectives": [
+        "Placeholder module to be completed later with hands-on content",
+        "Preserve sequence and reminder for future expansion"
+      ],
+      "section_titles": [
+        "Deferred Module Placeholder",
+        "Deferred",
+        "Deferred",
+        "Deferred",
+        "Deferred"
+      ],
+      "exercise": {
+        "title": "Deferred",
+        "steps": []
+      },
+      "expected_outcomes": []
+    },
+    "day8": {
+      "title": "Develop unit tests using GitHub Copilot tools",
+      "duration": 45,
+      "objectives": [
+        "Placeholder module to be completed later with hands-on content",
+        "Preserve sequence and reminder for future expansion"
+      ],
+      "section_titles": [
+        "Deferred Module Placeholder",
+        "Deferred",
+        "Deferred",
+        "Deferred",
+        "Deferred"
+      ],
+      "exercise": {
+        "title": "Deferred",
+        "steps": []
+      },
+      "expected_outcomes": []
+    }
+  }
+}

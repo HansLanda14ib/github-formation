@@ -1,0 +1,68 @@
+{
+  "id": "module-7",
+  "day": 7,
+  "title": "Developer use cases for AI with GitHub Copilot",
+  "duration": 45,
+  "objectives": [
+    "Placeholder module to be completed later with hands-on content",
+    "Preserve sequence and reminder for future expansion"
+  ],
+  "agenda": [
+    { "label": "Tell", "minutes": 45, "focus": "Deferred - will be designed later" }
+  ],
+  "units": [
+    { "title": "Introduction", "uid": "learn.github.developer-use-cases-for-ai-with-github-copilot.introduction" }
+  ],
+  "officialAlignment": [
+    "Deferred by user request: module 7 will be completed later."
+  ],
+  "officialDocs": [
+    { "title": "Deferred Module Placeholder", "href": "https://learn.microsoft.com/en-us/training/courses/gh-300t00" }
+  ],
+  "sections": [
+    {
+      "id": "m7-tell",
+      "title": "Deferred Module Placeholder",
+      "kind": "tell",
+      "body": "This module is intentionally deferred as requested. We will turn it into a complete hands-on program later.",
+      "bullets": [
+        "Keep in roadmap",
+        "To be expanded with full use-case curriculum"
+      ]
+    },
+    {
+      "id": "m7-show",
+      "title": "Deferred",
+      "kind": "show",
+      "body": "Deferred section.",
+      "bullets": []
+    },
+    {
+      "id": "m7-demo",
+      "title": "Deferred",
+      "kind": "demo",
+      "body": "Deferred section.",
+      "bullets": []
+    },
+    {
+      "id": "m7-discuss",
+      "title": "Deferred",
+      "kind": "discuss",
+      "body": "Deferred section.",
+      "bullets": []
+    },
+    {
+      "id": "m7-practice",
+      "title": "Deferred",
+      "kind": "practice",
+      "body": "Deferred section.",
+      "bullets": []
+    }
+  ],
+  "demo": { "title": "Deferred", "steps": [] },
+  "exercise": { "title": "Deferred", "steps": [], "expectedOutcomes": [], "troubleshooting": [], "links": [] },
+  "quiz": [],
+  "trainerNotes": [
+    "User requested module 7 to be completed later."
+  ]
+}
