@@ -1,34 +1,55 @@
 # Student? Start the Module 2 lab
 
-## 1. Fork this repository
+## Reset from zero (full test)
 
-[**Fork**](https://github.com/HansLanda14ib/github-formation/fork) (all branches — **not** main only).
+1. **Delete your old fork** on GitHub (Settings → Danger zone → Delete repository)  
+   Or keep it and close old lab issues.
 
-## 2. Enable Issues on your fork (required — or the link below returns 404)
+2. **Fork again:** [HansLanda14ib/github-formation](https://github.com/HansLanda14ib/github-formation/fork)  
+   Uncheck **“Copy the main branch only”** — you need all `feature/module-2/*` branches.
 
-GitHub **disables Issues on every new fork**. You must turn them on once:
+3. **Clone your fork** (fresh folder recommended):
 
-**Option A — script (recommended)**
+   ```bash
+   git clone git@github.com:YOUR-USERNAME/github-formation.git
+   cd github-formation
+   ```
 
-From your fork clone (with [GitHub CLI](https://cli.github.com/) logged in):
+4. **One-time fork setup** (Issues + Actions are off by default on forks):
 
-```bash
-./labs/module-2/scripts/setup-fork.sh
-```
+   ```bash
+   gh auth switch -u YOUR-USERNAME
+   ./labs/module-2/scripts/setup-fork.sh
+   ```
 
-**Option B — GitHub website**
+   Then open **Actions** on your fork and click **Enable workflows** if GitHub asks.
 
-On **your fork**: **Settings** → **General** → **Features** → check **Issues** and save.  
-Then **Settings** → **Actions** → **General** → allow all actions.
+5. **Create your lab issue** (only works after step 4):
 
-## 3. Create your lab issue
+   `https://github.com/YOUR-USERNAME/github-formation/issues/new?template=module-2-lab.md`
 
-**Issues** tab → **New issue** → **Module 2 Lab - Student Class Onboarding**
+6. **Start step 1:**
 
-Direct link (only works **after step 2** — replace `YOUR-USERNAME`):
+   ```bash
+   git checkout feature/module-2/00-intro
+   cd labs/module-2
+   npm install
+   npm test -- tests/step-00-intro.test.js
+   git commit --allow-empty -m "lab: step 00 complete"
+   git push origin feature/module-2/00-intro
+   ```
 
-`https://github.com/YOUR-USERNAME/github-formation/issues/new?template=module-2-lab.md`
+7. **Check:** Actions tab → workflow run → issue updates to step 2.
 
-## 4. Follow your issue
+---
 
-Clone your fork, checkout `feature/module-2/00-intro`, then see [labs/module-2/README.md](labs/module-2/README.md).
+## Quick reference (after fork exists)
+
+| Step | Action |
+|------|--------|
+| Fork setup | `./labs/module-2/scripts/setup-fork.sh` |
+| Create issue | Issues → **Module 2 Lab - Student Class Onboarding** |
+| Work | Follow **Current step** in your issue only |
+| Advance | Push branch when tests pass → issue updates automatically |
+
+Details: [labs/module-2/README.md](labs/module-2/README.md)
