@@ -101,7 +101,7 @@
     "lab": {
       "repoPath": "labs/module-2",
       "readmePath": "labs/module-2/README.md",
-      "issueTemplateUrl": "issues/new?template=module-2-lab.yml",
+      "issueTemplateUrl": "issues/new?template=module-2-lab.md",
       "steps": [
         {
           "branch": "feature/module-2/00-intro",

@@ -45,6 +45,7 @@ export function ExerciseModePage() {
               </Typography>
               <Stack component="ol" spacing={0.8} sx={{ m: 0, pl: 3, mb: 2 }}>
                 <Typography component="li">{t('exercise.labWorkflow.stepFork')}</Typography>
+                <Typography component="li">{t('exercise.labWorkflow.stepEnableIssues')}</Typography>
                 <Typography component="li">{t('exercise.labWorkflow.stepReadme')}</Typography>
                 <Typography component="li">{t('exercise.labWorkflow.stepIssue')}</Typography>
                 <Typography component="li">{t('exercise.labWorkflow.stepFollow')}</Typography>

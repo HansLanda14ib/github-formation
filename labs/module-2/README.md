@@ -12,22 +12,29 @@ Click **Fork** at the top of GitHub.
 
 - Do **not** check “Copy the main branch only” — you need all `feature/module-2/*` branches.
 
-### 2. Enable Issues on your fork (one time)
+### 2. Enable Issues on your fork (required)
 
-On **your fork**: **Settings** → **General** → **Features** → check **Issues** → Save.
+**Every GitHub fork has Issues turned off by default.**  
+If you skip this step, `issues/new?template=...` returns **404 Not Found**.
 
-Also enable **Actions**: **Settings** → **Actions** → **General** → Allow all actions.
+**Recommended** — run once from your fork clone:
 
-### 3. Start exercise
+```bash
+./labs/module-2/scripts/setup-fork.sh
+```
+
+**Or manually:** **Settings** → **General** → **Features** → enable **Issues**.  
+Also **Settings** → **Actions** → allow all actions.
+
+### 3. Create your lab issue
 
 On **your fork**:
 
-1. Click the **Issues** tab
-2. Click **New issue**
-3. Select **Module 2 Lab - Student Class Onboarding**
-4. Click **Create issue**
+1. **Issues** tab → **New issue**
+2. Select **Module 2 Lab - Student Class Onboarding**
+3. **Create issue**
 
-Direct link (replace `YOUR-USERNAME` with your GitHub login):
+Direct link (replace `YOUR-USERNAME`; works only after step 2):
 
 ```
 https://github.com/YOUR-USERNAME/github-formation/issues/new?template=module-2-lab.md
@@ -52,18 +59,27 @@ npm install
 npm test -- tests/step-00-intro.test.js
 ```
 
-Commit, push, then read the updated issue for step 2.
+Step 0 needs **no code changes**. When tests pass:
+
+```bash
+git commit --allow-empty -m "lab: step 00 complete"
+git push origin feature/module-2/00-intro
+```
+
+GitHub Actions updates your issue with the next step.
 
 ---
 
-## Commands
+## Troubleshooting
 
-```bash
-npm test                              # all tests
-npm test -- tests/step-00-intro.test.js   # one step only
-npm start                             # http://localhost:3002
-```
+| Problem | Fix |
+|---------|-----|
+| `issues/new?template=...` → **404** | Run `./labs/module-2/scripts/setup-fork.sh` or enable Issues in fork Settings |
+| Issue never updates after push | Enable Actions on fork; ensure you created the lab issue on **your fork** |
+| Missing `feature/module-2/*` branches | Re-fork without “main branch only”, or fetch all branches from upstream |
 
-## Trainer note
+---
 
-Run `scripts/bootstrap-branches.sh` from repo root to recreate learner branches.
+## Trainer notes
+
+See [lab.config.json](./lab.config.json) and [scripts/bootstrap-branches.sh](./scripts/bootstrap-branches.sh).

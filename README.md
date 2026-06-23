@@ -1,3 +1,9 @@
+# GH-300 Formation — GitHub Copilot
+
+> **Student?** Start here: [STUDENTS.md](./STUDENTS.md) — after forking, run `./labs/module-2/scripts/setup-fork.sh` **before** opening the issue template (otherwise the link returns 404).
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
