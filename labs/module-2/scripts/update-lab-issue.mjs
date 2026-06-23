@@ -8,17 +8,17 @@ const config = JSON.parse(readFileSync(resolve(labRoot, 'lab.config.json'), 'utf
 
 function renderCurrentStep(step) {
   if (!step) {
-    return `<!-- LAB-CURRENT-STEP:START -->
+    return `LAB-CURRENT-STEP-START
 ## Lab complete
 
 All steps passed. Great work with GitHub Copilot!
-<!-- LAB-CURRENT-STEP:END -->`
+LAB-CURRENT-STEP-END`
   }
 
-  const commands = step.issueText.commands.map((cmd) => `\`${cmd}\``).join('\n')
+  const commands = step.issueText.commands.map((cmd) => `- \`${cmd}\``).join('\n')
   const acceptance = step.issueText.acceptance.map((item) => `- ${item}`).join('\n')
 
-  return `<!-- LAB-CURRENT-STEP:START -->
+  return `LAB-CURRENT-STEP-START
 ## Current step — ${step.order}/${config.steps.length}: ${step.title}
 
 **Branch:** \`${step.branch}\`
@@ -33,7 +33,7 @@ ${commands}
 ${acceptance}
 
 When \`npm test\` passes locally, commit and push. This issue will update automatically.
-<!-- LAB-CURRENT-STEP:END -->`
+LAB-CURRENT-STEP-END`
 }
 
 function renderChecklist(completedStepIds) {
@@ -42,10 +42,10 @@ function renderChecklist(completedStepIds) {
     return `- [${checked}] Step ${step.order}: ${step.title}`
   })
 
-  return `<!-- LAB-CHECKLIST:START -->
+  return `LAB-CHECKLIST-START
 ## Progression
 ${lines.join('\n')}
-<!-- LAB-CHECKLIST:END -->`
+LAB-CHECKLIST-END`
 }
 
 function getCompletedStepsFromResults(results) {
@@ -154,8 +154,8 @@ async function main() {
   const checklistBlock = renderChecklist(completedStepIds)
 
   let body = issue.body ?? ''
-  body = upsertBlock(body, '<!-- LAB-CURRENT-STEP:START -->', '<!-- LAB-CURRENT-STEP:END -->', currentBlock)
-  body = upsertBlock(body, '<!-- LAB-CHECKLIST:START -->', '<!-- LAB-CHECKLIST:END -->', checklistBlock)
+  body = upsertBlock(body, 'LAB-CURRENT-STEP-START', 'LAB-CURRENT-STEP-END', currentBlock)
+  body = upsertBlock(body, 'LAB-CHECKLIST-START', 'LAB-CHECKLIST-END', checklistBlock)
 
   await githubRequest(`/repos/${repo}/issues/${issue.number}`, token, {
     method: 'PATCH',

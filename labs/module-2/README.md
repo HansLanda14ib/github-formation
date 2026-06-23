@@ -12,21 +12,30 @@ Click **Fork** at the top of GitHub.
 
 - Do **not** check “Copy the main branch only” — you need all `feature/module-2/*` branches.
 
-### 2. Open this README on **your fork**
+### 2. Enable Issues on your fork (one time)
 
-After forking, browse to `labs/module-2/README.md` on **your** copy of the repo.
+On **your fork**: **Settings** → **General** → **Features** → check **Issues** → Save.
 
-### 3. Click **Start exercise**
+Also enable **Actions**: **Settings** → **Actions** → **General** → Allow all actions.
 
-[![Start exercise](https://img.shields.io/badge/Start_exercise-0e7490?style=for-the-badge&logo=github)](../../issues/new?template=module-2-lab.yml)
+### 3. Start exercise
 
-[![Commencer l'exercice](https://img.shields.io/badge/Commencer_l'exercice-0e7490?style=for-the-badge&logo=github)](../../issues/new?template=module-2-lab.yml)
+On **your fork**:
 
-→ GitHub opens a new issue. Click **Create** — this issue is your **only guide** for the whole lab.
+1. Click the **Issues** tab
+2. Click **New issue**
+3. Select **Module 2 Lab - Student Class Onboarding**
+4. Click **Create issue**
 
-Then follow the **Current step** section in your issue (branch to checkout, Copilot hints, commands).
+Direct link (replace `YOUR-USERNAME` with your GitHub login):
 
-Each time you push, the issue updates automatically with the next step.
+```
+https://github.com/YOUR-USERNAME/github-formation/issues/new/choose
+```
+
+Example: `https://github.com/bibzaznenorsys/github-formation/issues/new/choose`
+
+Your issue is your **only guide** — follow the **Current step** section after each push.
 
 ---
 
@@ -44,20 +53,6 @@ npm test -- tests/step-00-intro.test.js
 ```
 
 Commit, push, then read the updated issue for step 2.
-
----
-
-<details>
-<summary>Start button shows 404?</summary>
-
-On **your fork**, enable these once in [Settings → General → Features](../../settings):
-
-- **Issues**
-- **Actions** (Settings → Actions → Allow all actions)
-
-Then open this README again on your fork and click **Start exercise**.
-
-</details>
 
 ---
 
