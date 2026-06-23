@@ -121,6 +121,7 @@ EOF
     .github/ISSUE_TEMPLATE/config.yml \
     .github/ISSUE_TEMPLATE/module-2-lab.md \
     labs/module-2/scripts/update-lab-issue.mjs \
+    labs/module-2/scripts/run-step-tests.mjs \
     labs/module-2/scripts/setup-fork.sh \
     labs/module-2/lab.config.json \
     labs/module-2/README.md \

@@ -31,8 +31,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test -- --reporter=json --outputFile=test-results.json
+      - name: Run step tests
+        env:
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+        run: node scripts/run-step-tests.mjs
         continue-on-error: true
         id: tests
 
@@ -45,6 +47,6 @@ jobs:
           TEST_RESULTS_PATH: test-results.json
         run: node scripts/update-lab-issue.mjs
 
-      - name: Fail if tests failed
+      - name: Fail if current step tests failed
         if: steps.tests.outcome == 'failure'
         run: exit 1
